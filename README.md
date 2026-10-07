@@ -81,9 +81,6 @@ Run tests with `python tests/test_siem.py`.
 - Search scans every event; there's no index, join or subsearch.
 - Behavioral baselining runs in batch mode only.
 
-## Docs
-
-[Architecture](docs/ARCHITECTURE.md) · [Tuning record](docs/TUNING.md) · [Detection catalogue](docs/DETECTIONS.md) · [Query language](docs/QUERY.md) · [Streaming](docs/STREAMING.md) · [Honeypot setup](docs/HONEYPOT.md)
 
 ---
 
