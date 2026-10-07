@@ -2,7 +2,7 @@
 
 A SIEM pipeline built from scratch to understand what tools like Splunk and Sentinel do internally: log normalization, detection, correlation, risk scoring, search and real-time alerting.
 
-**Python 3.10+ and PyYAML. Nothing else.**
+**Python 3.10+ and PyYAML.**
 
 ```bash
 pip install -r requirements.txt
