@@ -1,0 +1,32 @@
+title: XSS or Path Traversal Attempt
+id: web_xss_traversal
+status: stable
+description: Script injection or directory traversal payload in a request path
+author: Sadman Sakib Abir
+tags: [attack.t1190, attack.t1083]
+level: high
+entity: source.ip
+evidence_fields: [url.path]
+logsource:
+  category: web
+detection:
+  xss:
+    url.path|re:
+      - "<script"
+      - "javascript:"
+      - "onerror\\s*="
+      - "onload\\s*="
+      - "<img[^>]+src"
+  traversal:
+    url.path|contains:
+      - "../"
+      - "..\\"
+      - "/etc/passwd"
+      - "/etc/shadow"
+      - "win.ini"
+  condition: 1 of selection*
+falsepositives:
+  - Security researchers testing with authorisation
+response:
+  - Check whether the payload was reflected in the response
+  - Review output encoding on the affected endpoint

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIEM Dashboard</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b0e17;color:#e6e9f0;
+ font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 22px 60px}
+header{display:flex;justify-content:space-between;align-items:flex-end;
+ border-bottom:1px solid #1d2231;padding-bottom:18px;margin-bottom:26px;flex-wrap:wrap;gap:12px}
+h1{margin:0;font-size:24px;letter-spacing:-.4px}
+h1 span{color:#5b8def}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:#8a93a8;
+ margin:34px 0 14px;font-weight:600}
+h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#8a93a8}
+.sub{color:#8a93a8;font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.kpi{background:#121726;border:1px solid #1d2231;border-radius:10px;padding:16px 18px}
+.kpi .n{font-size:28px;font-weight:650;letter-spacing:-.5px}
+.kpi .l{color:#8a93a8;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-top:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:center}
+.card{background:#121726;border:1px solid #1d2231;border-radius:10px;padding:18px}
+.chart{width:100%;height:auto}
+.donut{width:190px;height:190px}
+.donut-num{fill:#e6e9f0;font-size:30px;font-weight:650}
+.axis{fill:#8a93a8;font-size:11px}
+.axis.strong{fill:#e6e9f0;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:#8a93a8;font-weight:600;font-size:11px;text-transform:uppercase;
+ letter-spacing:.8px;padding:8px 10px;border-bottom:1px solid #1d2231}
+td{padding:8px 10px;border-bottom:1px solid #161b29;vertical-align:top}
+tr:hover td{background:#151a28}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px}
+.small{font-size:11px}
+.muted{color:#8a93a8}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}
+.case{background:#121726;border:1px solid #1d2231;border-radius:10px;margin-bottom:10px;
+ overflow:hidden}
+.case summary{padding:14px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;
+ flex-wrap:wrap;list-style:none}
+.case summary::-webkit-details-marker{display:none}
+.case[open] summary{border-bottom:1px solid #1d2231}
+.sev{color:#0b0e17;font-weight:700;font-size:10px;letter-spacing:.8px;padding:3px 9px;
+ border-radius:4px}
+.cid{font-family:ui-monospace,monospace;font-size:12px;color:#8a93a8}
+.ctitle{font-weight:600;flex:1}
+.score,.sla{font-size:11px;color:#8a93a8;font-family:ui-monospace,monospace}
+.case-body{padding:16px 18px}
+.summary{margin:0 0 12px;color:#c3c9d6}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{padding:5px 0;border-bottom:1px solid #161b29;display:flex;gap:10px;
+ align-items:center;font-size:13px}
+.timeline .t{font-family:ui-monospace,monospace;font-size:11px;color:#8a93a8;width:62px}
+.pill{font-size:10px;padding:2px 7px;border-radius:3px;font-weight:600;text-transform:uppercase}
+.actions{margin:0;padding-left:18px}
+.actions li{padding:3px 0;color:#c3c9d6}
+.tags{margin-bottom:14px;display:flex;flex-wrap:wrap;gap:5px}
+.tag{background:#1a2133;color:#7aa2f7;font-size:11px;padding:3px 8px;border-radius:4px;
+ font-family:ui-monospace,monospace}
+.filters{display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap}
+.filters button{background:#151a28;border:1px solid #1d2231;color:#8a93a8;padding:5px 13px;
+ border-radius:6px;cursor:pointer;font-size:12px;font-family:inherit}
+.filters button.on{background:#5b8def;color:#0b0e17;border-color:#5b8def;font-weight:600}
+footer{margin-top:42px;padding-top:18px;border-top:1px solid #1d2231;color:#8a93a8;font-size:12px}
+@media(max-width:860px){.grid,.cols{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+
+<header>
+  <div>
+    <h1>SOC <span>Dashboard</span></h1>
+    <div class="sub">Detection, correlation and response summary</div>
+  </div>
+  <div class="sub mono">generated 2026-10-07 22:52</div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><div class="n">1,136</div><div class="l">Events</div></div>
+  <div class="kpi"><div class="n">28</div><div class="l">Alerts</div></div>
+  <div class="kpi"><div class="n" style="color:#ff4757">6</div><div class="l">Critical</div></div>
+  <div class="kpi"><div class="n">8</div><div class="l">Cases</div></div>
+  <div class="kpi"><div class="n">8</div><div class="l">Entities</div></div>
+  <div class="kpi"><div class="n">14</div><div class="l">ATT&amp;CK</div></div>
+</div>
+
+<h2>Attack timeline</h2>
+<div class="card"><svg viewBox='0 0 1100 190' class='chart'><line x1='70' y1='40.5' x2='1070' y2='40.5' stroke='#232838' stroke-width='1'/><text x='58' y='44.5' text-anchor='end' class='axis'>critical</text><line x1='70' y1='73.5' x2='1070' y2='73.5' stroke='#232838' stroke-width='1'/><text x='58' y='77.5' text-anchor='end' class='axis'>high</text><line x1='70' y1='106.5' x2='1070' y2='106.5' stroke='#232838' stroke-width='1'/><text x='58' y='110.5' text-anchor='end' class='axis'>medium</text><line x1='70' y1='139.5' x2='1070' y2='139.5' stroke='#232838' stroke-width='1'/><text x='58' y='143.5' text-anchor='end' class='axis'>low</text><circle cx='70.0' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>02:14:02 · SSH Brute Force · 203.0.113.45</title></circle><circle cx='588.5' cy='106.5' r='5' fill='#ffc048' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:02:00 · Network IDS Alert · 198.51.100.77</title></circle><circle cx='588.5' cy='139.5' r='5' fill='#4bcffa' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:02:00 · Anomalous Event Volume From Source · 198.51.100.77</title></circle><circle cx='591.4' cy='106.5' r='5' fill='#ffc048' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:05:00 · Web Directory Scanning · 198.51.100.77</title></circle><circle cx='591.4' cy='106.5' r='5' fill='#ffc048' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:05:00 · Sensitive File Probing · 198.51.100.77</title></circle><circle cx='591.4' cy='139.5' r='5' fill='#4bcffa' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:05:00 · Attack Tool User-Agent · 198.51.100.77</title></circle><circle cx='625.9' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:40:03 · SSH Brute Force · 198.51.100.77</title></circle><circle cx='625.9' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:40:03 · SSH Password Spray · 198.51.100.77</title></circle><circle cx='625.9' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:40:03 · Reconnaissance Followed by Credential Attack · 198.51.100.77</title></circle><circle cx='627.7' cy='40.5' r='7' fill='#ff4757' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:41:56 · Successful Authentication After Repeated Failures · 198.51.100.77</title></circle><circle cx='627.7' cy='106.5' r='5' fill='#ffc048' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:41:56 · Authentication at Unusual Hour for User · deploy</title></circle><circle cx='627.7' cy='40.5' r='7' fill='#ff4757' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:41:56 · Full Intrusion Chain - Recon to Compromise · 198.51.100.77</title></circle><circle cx='629.7' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>11:43:56 · Privilege Escalation Shortly After External Login · 198.51.100.77</title></circle><circle cx='792.9' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>14:30:11 · SQL Injection Attempt · 45.33.32.156</title></circle><circle cx='792.9' cy='139.5' r='5' fill='#4bcffa' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>14:30:11 · Attack Tool User-Agent · 45.33.32.156</title></circle><circle cx='793.6' cy='106.5' r='5' fill='#ffc048' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>14:30:51 · Network IDS Alert · 45.33.32.156</title></circle><circle cx='900.8' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>16:20:01 · Windows Account Brute Force · 141.98.80.12</title></circle><circle cx='900.8' cy='139.5' r='5' fill='#4bcffa' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>16:20:01 · Anomalous Event Volume From Source · 141.98.80.12</title></circle><circle cx='901.8' cy='40.5' r='7' fill='#ff4757' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>16:20:59 · Successful Authentication After Repeated Failures · 141.98.80.12</title></circle><circle cx='905.7' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>16:24:59 · User Added to Privileged Group · svc_sql</title></circle><circle cx='908.6' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>16:27:59 · Suspicious Process Execution · dc01</title></circle><circle cx='917.5' cy='40.5' r='7' fill='#ff4757' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>16:36:59 · Security Audit Log Cleared · dc01</title></circle><circle cx='1069.7' cy='139.5' r='5' fill='#4bcffa' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>19:12:00 · Anomalous Event Volume From Source · 80.94.92.60</title></circle><circle cx='1069.7' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>19:12:01 · SSH Brute Force · 80.94.92.60</title></circle><circle cx='1069.7' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>19:12:01 · SSH Password Spray · 80.94.92.60</title></circle><circle cx='1069.7' cy='73.5' r='5' fill='#ff7f50' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>19:12:01 · Honeypot Interaction · 80.94.92.60</title></circle><circle cx='1069.9' cy='40.5' r='7' fill='#ff4757' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>19:12:13 · Successful Authentication After Repeated Failures · 80.94.92.60</title></circle><circle cx='1070.0' cy='40.5' r='7' fill='#ff4757' fill-opacity='0.85' stroke='#0b0e17' stroke-width='1.5'><title>19:12:17 · Honeypot Post-Compromise Command Execution · 80.94.92.60</title></circle><text x='70' y='178' text-anchor='middle' class='axis'>02:14</text><text x='320' y='178' text-anchor='middle' class='axis'>06:28</text><text x='570' y='178' text-anchor='middle' class='axis'>10:43</text><text x='820' y='178' text-anchor='middle' class='axis'>14:57</text><text x='1070' y='178' text-anchor='middle' class='axis'>19:12</text></svg></div>
+
+<h2>Risk and detection breakdown</h2>
+<div class="grid">
+  <div class="card grid3">
+    <svg viewBox='0 0 190 190' class='donut'><circle cx='95.0' cy='95.0' r='77.0' fill='none' stroke='#ff4757' stroke-width='26' stroke-dasharray='103.67 483.81' stroke-dashoffset='-0.00' transform='rotate(-90 95.0 95.0)'><title>critical: 6</title></circle><circle cx='95.0' cy='95.0' r='77.0' fill='none' stroke='#ff7f50' stroke-width='26' stroke-dasharray='207.35 483.81' stroke-dashoffset='-103.67' transform='rotate(-90 95.0 95.0)'><title>high: 12</title></circle><circle cx='95.0' cy='95.0' r='77.0' fill='none' stroke='#ffc048' stroke-width='26' stroke-dasharray='86.39 483.81' stroke-dashoffset='-311.02' transform='rotate(-90 95.0 95.0)'><title>medium: 5</title></circle><circle cx='95.0' cy='95.0' r='77.0' fill='none' stroke='#4bcffa' stroke-width='26' stroke-dasharray='86.39 483.81' stroke-dashoffset='-397.41' transform='rotate(-90 95.0 95.0)'><title>low: 5</title></circle><text x='95.0' y='93.0' text-anchor='middle' class='donut-num'>28</text><text x='95.0' y='113.0' text-anchor='middle' class='axis'>alerts</text></svg>
+    <div>
+      <h4>Pipeline stages</h4>
+      <table><tr><td>Atomic (Sigma)</td><td class="mono">90</td></tr>
+      <tr><td>Stateful</td><td class="mono">4</td></tr>
+      <tr><td>Behavioral</td><td class="mono">4</td></tr>
+      <tr><td>Correlation</td><td class="mono">2</td></tr></table>
+    </div>
+  </div>
+  <div class="card"><h4>Top risk entities</h4>
+    <svg viewBox='0 0 520 282' class='chart'><text x='180' y='24.2' text-anchor='end' class='axis'>198.51.100.77</text><rect x='190' y='6' width='260.0' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='460.0' y='24.2' class='axis strong'>1784</text><text x='180' y='58.2' text-anchor='end' class='axis'>80.94.92.60</text><rect x='190' y='40' width='239.7' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='439.7' y='58.2' class='axis strong'>1645</text><text x='180' y='92.2' text-anchor='end' class='axis'>141.98.80.12</text><rect x='190' y='74' width='117.5' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='317.5' y='92.2' class='axis strong'>806</text><text x='180' y='126.2' text-anchor='end' class='axis'>dc01</text><rect x='190' y='108' width='65.4' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='265.4' y='126.2' class='axis strong'>449</text><text x='180' y='160.2' text-anchor='end' class='axis'>203.0.113.45</text><rect x='190' y='142' width='45.3' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='245.3' y='160.2' class='axis strong'>311</text><text x='180' y='194.2' text-anchor='end' class='axis'>deploy</text><rect x='190' y='176' width='22.0' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='222.0' y='194.2' class='axis strong'>151</text><text x='180' y='228.2' text-anchor='end' class='axis'>45.33.32.156</text><rect x='190' y='210' width='19.2' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='219.2' y='228.2' class='axis strong'>132</text><text x='180' y='262.2' text-anchor='end' class='axis'>svc_sql</text><rect x='190' y='244' width='17.5' height='26' rx='4' fill='#ff6b6b' fill-opacity='0.85'/><text x='217.5' y='262.2' class='axis strong'>120</text></svg></div>
+</div>
+
+<div class="grid">
+  <div class="card"><h4>Most frequent detections</h4><svg viewBox='0 0 520 282' class='chart'><text x='180' y='24.2' text-anchor='end' class='axis'>SSH Brute Force</text><rect x='190' y='6' width='260.0' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='460.0' y='24.2' class='axis strong'>3</text><text x='180' y='58.2' text-anchor='end' class='axis'>Anomalous Event Volume From </text><rect x='190' y='40' width='260.0' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='460.0' y='58.2' class='axis strong'>3</text><text x='180' y='92.2' text-anchor='end' class='axis'>Successful Authentication Af</text><rect x='190' y='74' width='260.0' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='460.0' y='92.2' class='axis strong'>3</text><text x='180' y='126.2' text-anchor='end' class='axis'>Network IDS Alert</text><rect x='190' y='108' width='173.3' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='373.3' y='126.2' class='axis strong'>2</text><text x='180' y='160.2' text-anchor='end' class='axis'>Attack Tool User-Agent</text><rect x='190' y='142' width='173.3' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='373.3' y='160.2' class='axis strong'>2</text><text x='180' y='194.2' text-anchor='end' class='axis'>SSH Password Spray</text><rect x='190' y='176' width='173.3' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='373.3' y='194.2' class='axis strong'>2</text><text x='180' y='228.2' text-anchor='end' class='axis'>Web Directory Scanning</text><rect x='190' y='210' width='86.7' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='286.7' y='228.2' class='axis strong'>1</text><text x='180' y='262.2' text-anchor='end' class='axis'>Sensitive File Probing</text><rect x='190' y='244' width='86.7' height='26' rx='4' fill='#5b8def' fill-opacity='0.85'/><text x='286.7' y='262.2' class='axis strong'>1</text></svg></div>
+  <div class="card"><h4>ATT&amp;CK techniques observed</h4>
+    <svg viewBox='0 0 520 282' class='chart'><text x='180' y='24.2' text-anchor='end' class='axis'>T1595</text><rect x='190' y='6' width='260.0' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='460.0' y='24.2' class='axis strong'>7</text><text x='180' y='58.2' text-anchor='end' class='axis'>T1078</text><rect x='190' y='40' width='185.7' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='385.7' y='58.2' class='axis strong'>5</text><text x='180' y='92.2' text-anchor='end' class='axis'>T1110</text><rect x='190' y='74' width='185.7' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='385.7' y='92.2' class='axis strong'>5</text><text x='180' y='126.2' text-anchor='end' class='axis'>T1110.001</text><rect x='190' y='108' width='148.6' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='348.6' y='126.2' class='axis strong'>4</text><text x='180' y='160.2' text-anchor='end' class='axis'>T1190</text><rect x='190' y='142' width='111.4' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='311.4' y='160.2' class='axis strong'>3</text><text x='180' y='194.2' text-anchor='end' class='axis'>T1110.003</text><rect x='190' y='176' width='111.4' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='311.4' y='194.2' class='axis strong'>3</text><text x='180' y='228.2' text-anchor='end' class='axis'>T1595.003</text><rect x='190' y='210' width='74.3' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='274.3' y='228.2' class='axis strong'>2</text><text x='180' y='262.2' text-anchor='end' class='axis'>T1105</text><rect x='190' y='244' width='74.3' height='26' rx='4' fill='#9b8cff' fill-opacity='0.85'/><text x='274.3' y='262.2' class='axis strong'>2</text></svg></div>
+</div>
+
+<h2>Cases (8)</h2>
+
+        <details class="case" open>
+          <summary>
+            <span class="sev" style="background:#ff4757">CRITICAL</span>
+            <span class="cid">CASE-20260921-5D2268</span>
+            <span class="ctitle">ip 198.51.100.77</span>
+            <span class="score">risk 1784</span>
+            <span class="sla">SLA 1h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity 198.51.100.77 (ip) accumulated a risk score of 1784 from 11 alerts spanning 41 minutes, covering 9 ATT&amp;CK techniques (T1078, T1083, T1110, T1110.001, T1110.003, T1190). Highest-severity finding: Successful Authentication After Repeated Failures.</p>
+            <div class="tags"><span class='tag'>T1078</span><span class='tag'>T1083</span><span class='tag'>T1110</span><span class='tag'>T1110.001</span><span class='tag'>T1110.003</span><span class='tag'>T1190</span><span class='tag'>T1548</span><span class='tag'>T1595</span><span class='tag'>T1595.003</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>11:02:00</span><span class='pill' style='background:#ffc04822;color:#ffc048'>medium</span>Network IDS Alert</li><li><span class='t'>11:02:00</span><span class='pill' style='background:#4bcffa22;color:#4bcffa'>low</span>Anomalous Event Volume From Source</li><li><span class='t'>11:05:00</span><span class='pill' style='background:#ffc04822;color:#ffc048'>medium</span>Web Directory Scanning</li><li><span class='t'>11:05:00</span><span class='pill' style='background:#ffc04822;color:#ffc048'>medium</span>Sensitive File Probing</li><li><span class='t'>11:05:00</span><span class='pill' style='background:#4bcffa22;color:#4bcffa'>low</span>Attack Tool User-Agent</li><li><span class='t'>11:40:03</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>SSH Brute Force</li><li><span class='t'>11:40:03</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>SSH Password Spray</li><li><span class='t'>11:40:03</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>Reconnaissance Followed by Credential Attack</li><li><span class='t'>11:41:56</span><span class='pill' style='background:#ff475722;color:#ff4757'>critical</span>Successful Authentication After Repeated Failures</li><li><span class='t'>11:41:56</span><span class='pill' style='background:#ff475722;color:#ff4757'>critical</span>Full Intrusion Chain - Recon to Compromise</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"><li>ISOLATE the target host from the network</li><li>Rotate credentials for the compromised account immediately</li><li>Revoke active sessions and authorised SSH keys</li><li>Capture volatile memory before reboot for forensics</li><li>Hunt for persistence: cron, systemd units, authorized_keys, new accounts</li><li>Block source IP at the perimeter firewall</li></ol></div>
+            </div>
+          </div>
+        </details>
+        <details class="case" open>
+          <summary>
+            <span class="sev" style="background:#ff4757">CRITICAL</span>
+            <span class="cid">CASE-20260921-971DD7</span>
+            <span class="ctitle">ip 80.94.92.60</span>
+            <span class="score">risk 1645</span>
+            <span class="sla">SLA 1h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity 80.94.92.60 (ip) accumulated a risk score of 1645 from 6 alerts spanning 0 minutes, covering 7 ATT&amp;CK techniques (T1059, T1078, T1105, T1110, T1110.001, T1110.003). Highest-severity finding: Successful Authentication After Repeated Failures.</p>
+            <div class="tags"><span class='tag'>T1059</span><span class='tag'>T1078</span><span class='tag'>T1105</span><span class='tag'>T1110</span><span class='tag'>T1110.001</span><span class='tag'>T1110.003</span><span class='tag'>T1595</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>19:12:00</span><span class='pill' style='background:#4bcffa22;color:#4bcffa'>low</span>Anomalous Event Volume From Source</li><li><span class='t'>19:12:01</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>SSH Brute Force</li><li><span class='t'>19:12:01</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>SSH Password Spray</li><li><span class='t'>19:12:01</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>Honeypot Interaction</li><li><span class='t'>19:12:13</span><span class='pill' style='background:#ff475722;color:#ff4757'>critical</span>Successful Authentication After Repeated Failures</li><li><span class='t'>19:12:17</span><span class='pill' style='background:#ff475722;color:#ff4757'>critical</span>Honeypot Post-Compromise Command Execution</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"><li>ISOLATE the target host from the network</li><li>Rotate credentials for the compromised account immediately</li><li>Revoke active sessions and authorised SSH keys</li><li>Capture volatile memory before reboot for forensics</li><li>Hunt for persistence: cron, systemd units, authorized_keys, new accounts</li><li>Block source IP at the perimeter firewall</li></ol></div>
+            </div>
+          </div>
+        </details>
+        <details class="case" open>
+          <summary>
+            <span class="sev" style="background:#ff4757">CRITICAL</span>
+            <span class="cid">CASE-20260921-CFD71E</span>
+            <span class="ctitle">ip 141.98.80.12</span>
+            <span class="score">risk 806</span>
+            <span class="sla">SLA 1h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity 141.98.80.12 (ip) accumulated a risk score of 806 from 3 alerts spanning 0 minutes, covering 4 ATT&amp;CK techniques (T1078, T1110, T1110.001, T1595). Highest-severity finding: Successful Authentication After Repeated Failures.</p>
+            <div class="tags"><span class='tag'>T1078</span><span class='tag'>T1110</span><span class='tag'>T1110.001</span><span class='tag'>T1595</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>16:20:01</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>Windows Account Brute Force</li><li><span class='t'>16:20:01</span><span class='pill' style='background:#4bcffa22;color:#4bcffa'>low</span>Anomalous Event Volume From Source</li><li><span class='t'>16:20:59</span><span class='pill' style='background:#ff475722;color:#ff4757'>critical</span>Successful Authentication After Repeated Failures</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"><li>ISOLATE the target host from the network</li><li>Rotate credentials for the compromised account immediately</li><li>Revoke active sessions and authorised SSH keys</li><li>Capture volatile memory before reboot for forensics</li><li>Hunt for persistence: cron, systemd units, authorized_keys, new accounts</li></ol></div>
+            </div>
+          </div>
+        </details>
+        <details class="case" open>
+          <summary>
+            <span class="sev" style="background:#ff4757">CRITICAL</span>
+            <span class="cid">CASE-20260921-A94536</span>
+            <span class="ctitle">host dc01</span>
+            <span class="score">risk 449</span>
+            <span class="sla">SLA 1h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity dc01 (host) accumulated a risk score of 449 from 2 alerts spanning 9 minutes, covering 3 ATT&amp;CK techniques (T1059.001, T1070.001, T1105). Highest-severity finding: Security Audit Log Cleared.</p>
+            <div class="tags"><span class='tag'>T1059.001</span><span class='tag'>T1070.001</span><span class='tag'>T1105</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>16:27:59</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>Suspicious Process Execution</li><li><span class='t'>16:36:59</span><span class='pill' style='background:#ff475722;color:#ff4757'>critical</span>Security Audit Log Cleared</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"><li>Preserve the host; treat as active intrusion cleanup</li><li>Reconstruct activity from SIEM-forwarded logs prior to the clear</li><li>Identify the account that cleared the log and its logon source</li></ol></div>
+            </div>
+          </div>
+        </details>
+        <details class="case" open>
+          <summary>
+            <span class="sev" style="background:#ff4757">CRITICAL</span>
+            <span class="cid">CASE-20260921-59A5A6</span>
+            <span class="ctitle">ip 203.0.113.45</span>
+            <span class="score">risk 311</span>
+            <span class="sla">SLA 1h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity 203.0.113.45 (ip) accumulated a risk score of 311 from 1 alerts spanning 0 minutes, covering 1 ATT&amp;CK techniques (T1110.001). Highest-severity finding: SSH Brute Force.</p>
+            <div class="tags"><span class='tag'>T1110.001</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>02:14:02</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>SSH Brute Force</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"><li>Block source IP at the perimeter firewall</li><li>Verify whether any authentication from this source succeeded</li><li>Enable fail2ban or equivalent rate limiting on the target host</li></ol></div>
+            </div>
+          </div>
+        </details>
+        <details class="case" >
+          <summary>
+            <span class="sev" style="background:#ff7f50">HIGH</span>
+            <span class="cid">CASE-20260921-EE6A1E</span>
+            <span class="ctitle">user deploy</span>
+            <span class="score">risk 151</span>
+            <span class="sla">SLA 4h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity deploy (user) accumulated a risk score of 151 from 1 alerts spanning 0 minutes, covering 1 ATT&amp;CK techniques (T1078). Highest-severity finding: Authentication at Unusual Hour for User.</p>
+            <div class="tags"><span class='tag'>T1078</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>11:41:56</span><span class='pill' style='background:#ffc04822;color:#ffc048'>medium</span>Authentication at Unusual Hour for User</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"></ol></div>
+            </div>
+          </div>
+        </details>
+        <details class="case" >
+          <summary>
+            <span class="sev" style="background:#ff7f50">HIGH</span>
+            <span class="cid">CASE-20260921-1897A9</span>
+            <span class="ctitle">ip 45.33.32.156</span>
+            <span class="score">risk 132</span>
+            <span class="sla">SLA 4h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity 45.33.32.156 (ip) accumulated a risk score of 132 from 3 alerts spanning 0 minutes, covering 2 ATT&amp;CK techniques (T1190, T1595). Highest-severity finding: SQL Injection Attempt.</p>
+            <div class="tags"><span class='tag'>T1190</span><span class='tag'>T1595</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>14:30:11</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>SQL Injection Attempt</li><li><span class='t'>14:30:11</span><span class='pill' style='background:#4bcffa22;color:#4bcffa'>low</span>Attack Tool User-Agent</li><li><span class='t'>14:30:51</span><span class='pill' style='background:#ffc04822;color:#ffc048'>medium</span>Network IDS Alert</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"><li>Review response codes for successful injection (200 on injected parameter)</li><li>Check database audit logs for unauthorised queries at matching timestamps</li><li>Deploy a WAF rule for the affected endpoint</li></ol></div>
+            </div>
+          </div>
+        </details>
+        <details class="case" >
+          <summary>
+            <span class="sev" style="background:#ffc048">MEDIUM</span>
+            <span class="cid">CASE-20260921-808D36</span>
+            <span class="ctitle">user svc_sql</span>
+            <span class="score">risk 120</span>
+            <span class="sla">SLA 24h</span>
+          </summary>
+          <div class="case-body">
+            <p class="summary">Entity svc_sql (user) accumulated a risk score of 120 from 1 alerts spanning 0 minutes, covering 2 ATT&amp;CK techniques (T1078.002, T1098). Highest-severity finding: User Added to Privileged Group.</p>
+            <div class="tags"><span class='tag'>T1078.002</span><span class='tag'>T1098</span></div>
+            <div class="cols">
+              <div><h4>Attack timeline</h4><ul class="timeline"><li><span class='t'>16:24:59</span><span class='pill' style='background:#ff7f5022;color:#ff7f50'>high</span>User Added to Privileged Group</li></ul></div>
+              <div><h4>Recommended actions</h4><ol class="actions"><li>Verify an approved change ticket exists for this membership</li><li>Remove the membership if unapproved and investigate the granting account</li></ol></div>
+            </div>
+          </div>
+        </details>
+
+<h2>Alerts</h2>
+<div class="filters">
+  <button class="on" data-f="all">All</button>
+  <button data-f="critical">Critical</button><button data-f="high">High</button>
+  <button data-f="medium">Medium</button><button data-f="low">Low</button>
+</div>
+<div class="card" style="padding:4px 10px">
+<table id="alerts"><thead><tr><th>Time</th><th>Severity</th><th>Rule</th><th>Entity</th>
+<th>Risk</th><th>Description</th><th>Context</th></tr></thead>
+<tbody><tr data-sev="high">
+          <td class="mono">02:14:02</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>SSH Brute Force</td>
+          <td class="mono">203.0.113.45</td>
+          <td class="mono">311</td>
+          <td class="muted">Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)</td>
+          <td class="muted mono small">country_name=Russia · name=AS-BULLETPROOF-HOSTING · internal=False</td></tr><tr data-sev="medium">
+          <td class="mono">11:02:00</td>
+          <td><span class="dot" style="background:#ffc048"></span>medium</td>
+          <td>Network IDS Alert</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">67</td>
+          <td class="muted">Suricata signature fired on network traffic</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="low">
+          <td class="mono">11:02:00</td>
+          <td><span class="dot" style="background:#4bcffa"></span>low</td>
+          <td>Anomalous Event Volume From Source</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">29</td>
+          <td class="muted">78 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="medium">
+          <td class="mono">11:05:00</td>
+          <td><span class="dot" style="background:#ffc048"></span>medium</td>
+          <td>Web Directory Scanning</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">67</td>
+          <td class="muted">High volume of not-found responses from a single source, consistent with automated directory enumeration (15 events within 5m)</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="medium">
+          <td class="mono">11:05:00</td>
+          <td><span class="dot" style="background:#ffc048"></span>medium</td>
+          <td>Sensitive File Probing</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">67</td>
+          <td class="muted">Requests for configuration, credential or backup files that no legitimate user browses to</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="low">
+          <td class="mono">11:05:00</td>
+          <td><span class="dot" style="background:#4bcffa"></span>low</td>
+          <td>Attack Tool User-Agent</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">29</td>
+          <td class="muted">Client identifies itself as a known offensive security tool</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">11:40:03</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>SSH Brute Force</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">259</td>
+          <td class="muted">Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">11:40:03</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>SSH Password Spray</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">259</td>
+          <td class="muted">One source attempting authentication against many distinct usernames (5 distinct user.name within 10m)</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">11:40:03</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>Reconnaissance Followed by Credential Attack</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">182</td>
+          <td class="muted">A source that enumerated the environment then attempted credential attacks, indicating a targeted operation rather than opportunistic noise. Chain of </td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="critical">
+          <td class="mono">11:41:56</td>
+          <td><span class="dot" style="background:#ff4757"></span>critical</td>
+          <td>Successful Authentication After Repeated Failures</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">389</td>
+          <td class="muted">Authentication SUCCEEDED as &#x27;deploy&#x27; on webserver01 after 42 failures against 14 account(s) in the preceding 10 minutes</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="medium">
+          <td class="mono">11:41:56</td>
+          <td><span class="dot" style="background:#ffc048"></span>medium</td>
+          <td>Authentication at Unusual Hour for User</td>
+          <td class="mono">deploy</td>
+          <td class="mono">151</td>
+          <td class="muted">User &#x27;deploy&#x27; authenticated at 11:00; baseline activity hours are [7, 8, 9]</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="critical">
+          <td class="mono">11:41:56</td>
+          <td><span class="dot" style="background:#ff4757"></span>critical</td>
+          <td>Full Intrusion Chain - Recon to Compromise</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">182</td>
+          <td class="muted">A single source performed reconnaissance, then credential attacks, then authenticated successfully. Chain of 3 stages completed in 39 minutes.</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">11:43:56</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>Privilege Escalation Shortly After External Login</td>
+          <td class="mono">198.51.100.77</td>
+          <td class="mono">259</td>
+          <td class="muted">User &#x27;deploy&#x27; escalated privileges 2m after logging in from external address 198.51.100.77</td>
+          <td class="muted mono small">country_name=China · name=CHINANET-BACKBONE · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">14:30:11</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>SQL Injection Attempt</td>
+          <td class="mono">45.33.32.156</td>
+          <td class="mono">72</td>
+          <td class="muted">SQL syntax in a URL parameter, indicating injection probing against the application</td>
+          <td class="muted mono small">country_name=United States · name=LINODE-AP · internal=False</td></tr><tr data-sev="low">
+          <td class="mono">14:30:11</td>
+          <td><span class="dot" style="background:#4bcffa"></span>low</td>
+          <td>Attack Tool User-Agent</td>
+          <td class="mono">45.33.32.156</td>
+          <td class="mono">18</td>
+          <td class="muted">Client identifies itself as a known offensive security tool</td>
+          <td class="muted mono small">country_name=United States · name=LINODE-AP · internal=False</td></tr><tr data-sev="medium">
+          <td class="mono">14:30:51</td>
+          <td><span class="dot" style="background:#ffc048"></span>medium</td>
+          <td>Network IDS Alert</td>
+          <td class="mono">45.33.32.156</td>
+          <td class="mono">42</td>
+          <td class="muted">Suricata signature fired on network traffic</td>
+          <td class="muted mono small">country_name=United States · name=LINODE-AP · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">16:20:01</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>Windows Account Brute Force</td>
+          <td class="mono">141.98.80.12</td>
+          <td class="mono">230</td>
+          <td class="muted">Repeated Windows logon failures (4625) from one source address (10 events within 1m)</td>
+          <td class="muted mono small">country_name=Lithuania · name=CHERRY-SERVERS · internal=False</td></tr><tr data-sev="low">
+          <td class="mono">16:20:01</td>
+          <td><span class="dot" style="background:#4bcffa"></span>low</td>
+          <td>Anomalous Event Volume From Source</td>
+          <td class="mono">141.98.80.12</td>
+          <td class="mono">58</td>
+          <td class="muted">41 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)</td>
+          <td class="muted mono small">country_name=Lithuania · name=CHERRY-SERVERS · internal=False</td></tr><tr data-sev="critical">
+          <td class="mono">16:20:59</td>
+          <td><span class="dot" style="background:#ff4757"></span>critical</td>
+          <td>Successful Authentication After Repeated Failures</td>
+          <td class="mono">141.98.80.12</td>
+          <td class="mono">518</td>
+          <td class="muted">Authentication SUCCEEDED as &#x27;Administrator&#x27; on dc01 after 40 failures against 3 account(s) in the preceding 10 minutes</td>
+          <td class="muted mono small">country_name=Lithuania · name=CHERRY-SERVERS · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">16:24:59</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>User Added to Privileged Group</td>
+          <td class="mono">svc_sql</td>
+          <td class="mono">120</td>
+          <td class="muted">An account was added to a privileged group, a common persistence and escalation step</td>
+          <td class="muted mono small">criticality=crown_jewel · role=domain_controller · privileged=False</td></tr><tr data-sev="high">
+          <td class="mono">16:27:59</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>Suspicious Process Execution</td>
+          <td class="mono">dc01</td>
+          <td class="mono">180</td>
+          <td class="muted">Execution of living-off-the-land binaries with arguments associated with download or encoded execution</td>
+          <td class="muted mono small">criticality=crown_jewel · role=domain_controller · privileged=True</td></tr><tr data-sev="critical">
+          <td class="mono">16:36:59</td>
+          <td><span class="dot" style="background:#ff4757"></span>critical</td>
+          <td>Security Audit Log Cleared</td>
+          <td class="mono">dc01</td>
+          <td class="mono">270</td>
+          <td class="muted">The Windows security event log was cleared, a classic anti-forensics action</td>
+          <td class="muted mono small">criticality=crown_jewel · role=domain_controller · privileged=True</td></tr><tr data-sev="low">
+          <td class="mono">19:12:00</td>
+          <td><span class="dot" style="background:#4bcffa"></span>low</td>
+          <td>Anomalous Event Volume From Source</td>
+          <td class="mono">80.94.92.60</td>
+          <td class="mono">48</td>
+          <td class="muted">21 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)</td>
+          <td class="muted mono small">country_name=Netherlands · name=ESTOXY-OU · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">19:12:01</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>SSH Brute Force</td>
+          <td class="mono">80.94.92.60</td>
+          <td class="mono">290</td>
+          <td class="muted">Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)</td>
+          <td class="muted mono small">country_name=Netherlands · name=ESTOXY-OU · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">19:12:01</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>SSH Password Spray</td>
+          <td class="mono">80.94.92.60</td>
+          <td class="mono">290</td>
+          <td class="muted">One source attempting authentication against many distinct usernames (5 distinct user.name within 10m)</td>
+          <td class="muted mono small">country_name=Netherlands · name=ESTOXY-OU · internal=False</td></tr><tr data-sev="high">
+          <td class="mono">19:12:01</td>
+          <td><span class="dot" style="background:#ff7f50"></span>high</td>
+          <td>Honeypot Interaction</td>
+          <td class="mono">80.94.92.60</td>
+          <td class="mono">290</td>
+          <td class="muted">Any interaction with the honeypot sensor, which has no legitimate purpose and therefore no false positives</td>
+          <td class="muted mono small">country_name=Netherlands · name=ESTOXY-OU · internal=False</td></tr><tr data-sev="critical">
+          <td class="mono">19:12:13</td>
+          <td><span class="dot" style="background:#ff4757"></span>critical</td>
+          <td>Successful Authentication After Repeated Failures</td>
+          <td class="mono">80.94.92.60</td>
+          <td class="mono">435</td>
+          <td class="muted">Authentication SUCCEEDED as &#x27;root&#x27; on honeypot after 12 failures against 6 account(s) in the preceding 10 minutes</td>
+          <td class="muted mono small">country_name=Netherlands · name=ESTOXY-OU · internal=False</td></tr><tr data-sev="critical">
+          <td class="mono">19:12:17</td>
+          <td><span class="dot" style="background:#ff4757"></span>critical</td>
+          <td>Honeypot Post-Compromise Command Execution</td>
+          <td class="mono">80.94.92.60</td>
+          <td class="mono">290</td>
+          <td class="muted">Attacker executed commands inside the honeypot after a successful fake login, revealing post-exploitation tradecraft</td>
+          <td class="muted mono small">country_name=Netherlands · name=ESTOXY-OU · internal=False</td></tr></tbody></table></div>
+
+<h2>Response actions</h2>
+<div class="card" style="padding:4px 10px">
+<table><thead><tr><th></th><th>Action</th><th>Target</th><th>Detail</th><th>Mode</th></tr></thead>
+<tbody><tr><td>✓</td><td>create_case</td><td class='mono'>198.51.100.77</td><td class='muted'>out\cases\CASE-20260921-5D2268.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>198.51.100.77</td><td class='muted'>[CRITICAL] CRITICAL: ip 198.51.100.77 - Successful Authentication After Repeated Failures | SLA 1h</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>block_ip</td><td class='mono'>198.51.100.77</td><td class='muted'>HELD FOR ANALYST APPROVAL - critical but not honeypot-confirmed</td><td class='mono small'>dry-run</td></tr><tr><td>✓</td><td>create_case</td><td class='mono'>80.94.92.60</td><td class='muted'>out\cases\CASE-20260921-971DD7.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>80.94.92.60</td><td class='muted'>[CRITICAL] CRITICAL: ip 80.94.92.60 - Successful Authentication After Repeated Failures | SLA 1h</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>block_ip</td><td class='mono'>80.94.92.60</td><td class='muted'>would block: honeypot interaction - CASE-20260921-971DD7</td><td class='mono small'>dry-run</td></tr><tr><td>✓</td><td>create_case</td><td class='mono'>141.98.80.12</td><td class='muted'>out\cases\CASE-20260921-CFD71E.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>141.98.80.12</td><td class='muted'>[CRITICAL] CRITICAL: ip 141.98.80.12 - Successful Authentication After Repeated Failures | SLA 1h</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>block_ip</td><td class='mono'>141.98.80.12</td><td class='muted'>HELD FOR ANALYST APPROVAL - critical but not honeypot-confirmed</td><td class='mono small'>dry-run</td></tr><tr><td>✓</td><td>create_case</td><td class='mono'>dc01</td><td class='muted'>out\cases\CASE-20260921-A94536.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>dc01</td><td class='muted'>[CRITICAL] CRITICAL: host dc01 - Security Audit Log Cleared | SLA 1h</td><td class='mono small'>dry-run</td></tr><tr><td>✓</td><td>create_case</td><td class='mono'>203.0.113.45</td><td class='muted'>out\cases\CASE-20260921-59A5A6.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>203.0.113.45</td><td class='muted'>[CRITICAL] CRITICAL: ip 203.0.113.45 - SSH Brute Force | SLA 1h</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>block_ip</td><td class='mono'>203.0.113.45</td><td class='muted'>HELD FOR ANALYST APPROVAL - critical but not honeypot-confirmed</td><td class='mono small'>dry-run</td></tr><tr><td>✓</td><td>create_case</td><td class='mono'>deploy</td><td class='muted'>out\cases\CASE-20260921-EE6A1E.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>deploy</td><td class='muted'>[HIGH] HIGH: user deploy - Authentication at Unusual Hour for User | SLA 4h</td><td class='mono small'>dry-run</td></tr><tr><td>✓</td><td>create_case</td><td class='mono'>45.33.32.156</td><td class='muted'>out\cases\CASE-20260921-1897A9.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>45.33.32.156</td><td class='muted'>[HIGH] HIGH: ip 45.33.32.156 - SQL Injection Attempt | SLA 4h</td><td class='mono small'>dry-run</td></tr><tr><td>✓</td><td>create_case</td><td class='mono'>svc_sql</td><td class='muted'>out\cases\CASE-20260921-808D36.json</td><td class='mono small'>dry-run</td></tr><tr><td>○</td><td>notify</td><td class='mono'>svc_sql</td><td class='muted'>[MEDIUM] MEDIUM: user svc_sql - User Added to Privileged Group | SLA 24h</td><td class='mono small'>dry-run</td></tr></tbody></table></div>
+
+<h2>Ingestion</h2>
+<div class="card" style="padding:4px 10px">
+<table><thead><tr><th>File</th><th>Source</th><th>Parsed</th><th>Skipped</th></tr></thead>
+<tbody><tr><td class='mono'>auth.log</td><td>auth</td><td class='mono'>354</td><td class='mono muted'>0</td></tr><tr><td class='mono'>access.log</td><td>nginx</td><td class='mono'>655</td><td class='mono muted'>0</td></tr><tr><td class='mono'>windows_security.json</td><td>winlog</td><td class='mono'>104</td><td class='mono muted'>0</td></tr><tr><td class='mono'>suricata_eve.json</td><td>suricata</td><td class='mono'>2</td><td class='mono muted'>0</td></tr><tr><td class='mono'>cowrie.json</td><td>cowrie</td><td class='mono'>21</td><td class='mono muted'>0</td></tr></tbody></table></div>
+
+<footer>Generated by the SIEM pipeline · response actions ran in dry-run mode ·
+all data from analysed log files</footer>
+</div>
+<script>
+document.querySelectorAll('.filters button').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.filters button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    var f = b.dataset.f;
+    document.querySelectorAll('#alerts tbody tr').forEach(function(tr){
+      tr.style.display = (f === 'all' || tr.dataset.sev === f) ? '' : 'none';
+    });
+  });
+});
+</script></body></html>

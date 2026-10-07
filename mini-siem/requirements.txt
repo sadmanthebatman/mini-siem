@@ -1,0 +1,5 @@
+# Runtime: the pipeline needs exactly one third-party package.
+PyYAML>=6.0
+
+# Development only
+# pytest>=7.0

@@ -1,0 +1,16 @@
+title: Reconnaissance Followed by Credential Attack
+id: chain_scan_to_spray
+description: A source that enumerated the environment then attempted credential attacks, indicating a targeted operation rather than opportunistic noise.
+level: high
+tags: [attack.t1595, attack.t1110.003]
+sequence:
+  ordered: true
+  within: 6h
+  stages:
+    - name: recon
+      rule_id: [web_scanning, web_sensitive_paths, suricata_ids_alert]
+    - name: credential_attack
+      rule_id: [ssh_password_spray, ssh_brute_force, win_brute_force, honeypot_interaction]
+response:
+  - Elevate monitoring on accounts targeted during the spray
+  - Consider pre-emptive blocking of the source range

@@ -1,0 +1,33 @@
+title: SSH Brute Force
+id: ssh_brute_force
+status: stable
+description: Repeated SSH authentication failures from a single source address in a short window
+author: Sadman Sakib Abir
+references:
+  - https://attack.mitre.org/techniques/T1110/001/
+tags: [attack.t1110.001, attack.credential_access]
+level: high
+entity: source.ip
+evidence_fields: [user.name, source.ip, event.outcome]
+logsource:
+  category: authentication
+  product: linux
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: failure
+    event.provider: [sshd, cowrie]
+  threshold:
+    group_by: [source.ip]
+    count: 10
+    window: 60s
+  condition: selection
+falsepositives:
+  - Misconfigured automation or backup agent with stale credentials
+  - A user whose saved password expired and whose client retries aggressively
+  - Vulnerability scanners during an authorised assessment window
+response:
+  - Confirm whether any authentication from this source later succeeded
+  - Check source.geo and threat.indicator context on the alert
+  - Block the source at the perimeter if external and unrecognised
+  - If a success followed, treat as compromise and rotate the account credentials

@@ -1,0 +1,35 @@
+title: Suspicious Process Execution
+id: win_suspicious_process
+status: experimental
+description: Execution of living-off-the-land binaries with arguments associated with download or encoded execution
+author: Sadman Sakib Abir
+tags: [attack.t1059.001, attack.t1105, attack.execution]
+level: high
+entity: host.name
+evidence_fields: [process.name, process.command_line, user.name]
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    event.category: process
+    event.action: process_creation
+  suspicious_args:
+    process.command_line|contains:
+      - "-enc "
+      - "-EncodedCommand"
+      - "DownloadString"
+      - "DownloadFile"
+      - "IEX("
+      - "Invoke-Expression"
+      - "bypass -nop"
+      - "certutil -urlcache"
+      - "bitsadmin /transfer"
+      - "vssadmin delete shadows"
+  condition: selection and suspicious_args
+falsepositives:
+  - Legitimate administrative scripts and software deployment tooling
+response:
+  - Capture the full command line and decode any base64 payload
+  - Check the parent process for an unusual chain (office app spawning a shell)
+  - Isolate the host if the payload reaches an external address

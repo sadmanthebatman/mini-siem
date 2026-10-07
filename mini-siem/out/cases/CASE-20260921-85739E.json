@@ -1,0 +1,30 @@
+{
+  "id": "CASE-20260921-85739E",
+  "title": "MEDIUM: ip 192.168.1.10 - SSH Brute Force",
+  "severity": "medium",
+  "opened_at": "2026-09-21T07:27:00",
+  "entity": {
+    "id": "192.168.1.10",
+    "type": "ip",
+    "risk_score": 108.0
+  },
+  "techniques": [
+    "T1110.001"
+  ],
+  "alert_count": 1,
+  "summary": "Entity 192.168.1.10 (ip) accumulated a risk score of 108 from 1 alerts spanning 0 minutes, covering 1 ATT&CK techniques (T1110.001). Highest-severity finding: SSH Brute Force.",
+  "recommended_actions": [
+    "Block source IP at the perimeter firewall",
+    "Verify whether any authentication from this source succeeded",
+    "Enable fail2ban or equivalent rate limiting on the target host"
+  ],
+  "sla_hours": 24,
+  "timeline": [
+    {
+      "time": "2026-09-21T07:27:00",
+      "rule": "SSH Brute Force",
+      "severity": "high",
+      "description": "Repeated SSH authentication failures from a single source address in a short window (3 events within 1m)"
+    }
+  ]
+}

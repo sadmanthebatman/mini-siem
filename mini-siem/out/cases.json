@@ -1,0 +1,390 @@
+[
+  {
+    "id": "CASE-20260921-5D2268",
+    "title": "CRITICAL: ip 198.51.100.77 - Successful Authentication After Repeated Failures",
+    "severity": "critical",
+    "opened_at": "2026-09-21T11:43:56",
+    "entity": {
+      "id": "198.51.100.77",
+      "type": "ip",
+      "risk_score": 1783.6
+    },
+    "techniques": [
+      "T1078",
+      "T1083",
+      "T1110",
+      "T1110.001",
+      "T1110.003",
+      "T1190",
+      "T1548",
+      "T1595",
+      "T1595.003"
+    ],
+    "alert_count": 11,
+    "summary": "Entity 198.51.100.77 (ip) accumulated a risk score of 1784 from 11 alerts spanning 41 minutes, covering 9 ATT&CK techniques (T1078, T1083, T1110, T1110.001, T1110.003, T1190). Highest-severity finding: Successful Authentication After Repeated Failures.",
+    "recommended_actions": [
+      "ISOLATE the target host from the network",
+      "Rotate credentials for the compromised account immediately",
+      "Revoke active sessions and authorised SSH keys",
+      "Capture volatile memory before reboot for forensics",
+      "Hunt for persistence: cron, systemd units, authorized_keys, new accounts",
+      "Block source IP at the perimeter firewall",
+      "Verify whether any authentication from this source succeeded",
+      "Enable fail2ban or equivalent rate limiting on the target host"
+    ],
+    "sla_hours": 1,
+    "timeline": [
+      {
+        "time": "2026-09-21T11:02:00",
+        "rule": "Network IDS Alert",
+        "severity": "medium",
+        "description": "Suricata signature fired on network traffic"
+      },
+      {
+        "time": "2026-09-21T11:02:00",
+        "rule": "Anomalous Event Volume From Source",
+        "severity": "low",
+        "description": "78 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)"
+      },
+      {
+        "time": "2026-09-21T11:05:00",
+        "rule": "Web Directory Scanning",
+        "severity": "medium",
+        "description": "High volume of not-found responses from a single source, consistent with automated directory enumeration (15 events within 5m)"
+      },
+      {
+        "time": "2026-09-21T11:05:00",
+        "rule": "Sensitive File Probing",
+        "severity": "medium",
+        "description": "Requests for configuration, credential or backup files that no legitimate user browses to"
+      },
+      {
+        "time": "2026-09-21T11:05:00",
+        "rule": "Attack Tool User-Agent",
+        "severity": "low",
+        "description": "Client identifies itself as a known offensive security tool"
+      },
+      {
+        "time": "2026-09-21T11:40:03",
+        "rule": "SSH Brute Force",
+        "severity": "high",
+        "description": "Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)"
+      },
+      {
+        "time": "2026-09-21T11:40:03",
+        "rule": "SSH Password Spray",
+        "severity": "high",
+        "description": "One source attempting authentication against many distinct usernames (5 distinct user.name within 10m)"
+      },
+      {
+        "time": "2026-09-21T11:40:03",
+        "rule": "Reconnaissance Followed by Credential Attack",
+        "severity": "high",
+        "description": "A source that enumerated the environment then attempted credential attacks, indicating a targeted operation rather than opportunistic noise. Chain of 2 stages completed in 38 minutes."
+      },
+      {
+        "time": "2026-09-21T11:41:56",
+        "rule": "Successful Authentication After Repeated Failures",
+        "severity": "critical",
+        "description": "Authentication SUCCEEDED as 'deploy' on webserver01 after 42 failures against 14 account(s) in the preceding 10 minutes"
+      },
+      {
+        "time": "2026-09-21T11:41:56",
+        "rule": "Full Intrusion Chain - Recon to Compromise",
+        "severity": "critical",
+        "description": "A single source performed reconnaissance, then credential attacks, then authenticated successfully. Chain of 3 stages completed in 39 minutes."
+      },
+      {
+        "time": "2026-09-21T11:43:56",
+        "rule": "Privilege Escalation Shortly After External Login",
+        "severity": "high",
+        "description": "User 'deploy' escalated privileges 2m after logging in from external address 198.51.100.77"
+      }
+    ]
+  },
+  {
+    "id": "CASE-20260921-971DD7",
+    "title": "CRITICAL: ip 80.94.92.60 - Successful Authentication After Repeated Failures",
+    "severity": "critical",
+    "opened_at": "2026-09-21T19:12:17.995601",
+    "entity": {
+      "id": "80.94.92.60",
+      "type": "ip",
+      "risk_score": 1644.9
+    },
+    "techniques": [
+      "T1059",
+      "T1078",
+      "T1105",
+      "T1110",
+      "T1110.001",
+      "T1110.003",
+      "T1595"
+    ],
+    "alert_count": 6,
+    "summary": "Entity 80.94.92.60 (ip) accumulated a risk score of 1645 from 6 alerts spanning 0 minutes, covering 7 ATT&CK techniques (T1059, T1078, T1105, T1110, T1110.001, T1110.003). Highest-severity finding: Successful Authentication After Repeated Failures.",
+    "recommended_actions": [
+      "ISOLATE the target host from the network",
+      "Rotate credentials for the compromised account immediately",
+      "Revoke active sessions and authorised SSH keys",
+      "Capture volatile memory before reboot for forensics",
+      "Hunt for persistence: cron, systemd units, authorized_keys, new accounts",
+      "Block source IP at the perimeter firewall",
+      "Verify whether any authentication from this source succeeded",
+      "Enable fail2ban or equivalent rate limiting on the target host"
+    ],
+    "sla_hours": 1,
+    "timeline": [
+      {
+        "time": "2026-09-21T19:12:00",
+        "rule": "Anomalous Event Volume From Source",
+        "severity": "low",
+        "description": "21 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)"
+      },
+      {
+        "time": "2026-09-21T19:12:01.497661",
+        "rule": "SSH Brute Force",
+        "severity": "high",
+        "description": "Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)"
+      },
+      {
+        "time": "2026-09-21T19:12:01.497661",
+        "rule": "SSH Password Spray",
+        "severity": "high",
+        "description": "One source attempting authentication against many distinct usernames (5 distinct user.name within 10m)"
+      },
+      {
+        "time": "2026-09-21T19:12:01.497661",
+        "rule": "Honeypot Interaction",
+        "severity": "high",
+        "description": "Any interaction with the honeypot sensor, which has no legitimate purpose and therefore no false positives"
+      },
+      {
+        "time": "2026-09-21T19:12:13.830386",
+        "rule": "Successful Authentication After Repeated Failures",
+        "severity": "critical",
+        "description": "Authentication SUCCEEDED as 'root' on honeypot after 12 failures against 6 account(s) in the preceding 10 minutes"
+      },
+      {
+        "time": "2026-09-21T19:12:17.995601",
+        "rule": "Honeypot Post-Compromise Command Execution",
+        "severity": "critical",
+        "description": "Attacker executed commands inside the honeypot after a successful fake login, revealing post-exploitation tradecraft"
+      }
+    ]
+  },
+  {
+    "id": "CASE-20260921-CFD71E",
+    "title": "CRITICAL: ip 141.98.80.12 - Successful Authentication After Repeated Failures",
+    "severity": "critical",
+    "opened_at": "2026-09-21T16:20:59.410947",
+    "entity": {
+      "id": "141.98.80.12",
+      "type": "ip",
+      "risk_score": 806.3
+    },
+    "techniques": [
+      "T1078",
+      "T1110",
+      "T1110.001",
+      "T1595"
+    ],
+    "alert_count": 3,
+    "summary": "Entity 141.98.80.12 (ip) accumulated a risk score of 806 from 3 alerts spanning 0 minutes, covering 4 ATT&CK techniques (T1078, T1110, T1110.001, T1595). Highest-severity finding: Successful Authentication After Repeated Failures.",
+    "recommended_actions": [
+      "ISOLATE the target host from the network",
+      "Rotate credentials for the compromised account immediately",
+      "Revoke active sessions and authorised SSH keys",
+      "Capture volatile memory before reboot for forensics",
+      "Hunt for persistence: cron, systemd units, authorized_keys, new accounts"
+    ],
+    "sla_hours": 1,
+    "timeline": [
+      {
+        "time": "2026-09-21T16:20:01.634849",
+        "rule": "Windows Account Brute Force",
+        "severity": "high",
+        "description": "Repeated Windows logon failures (4625) from one source address (10 events within 1m)"
+      },
+      {
+        "time": "2026-09-21T16:20:01.634849",
+        "rule": "Anomalous Event Volume From Source",
+        "severity": "low",
+        "description": "41 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)"
+      },
+      {
+        "time": "2026-09-21T16:20:59.410947",
+        "rule": "Successful Authentication After Repeated Failures",
+        "severity": "critical",
+        "description": "Authentication SUCCEEDED as 'Administrator' on dc01 after 40 failures against 3 account(s) in the preceding 10 minutes"
+      }
+    ]
+  },
+  {
+    "id": "CASE-20260921-A94536",
+    "title": "CRITICAL: host dc01 - Security Audit Log Cleared",
+    "severity": "critical",
+    "opened_at": "2026-09-21T16:36:59.410947",
+    "entity": {
+      "id": "dc01",
+      "type": "host",
+      "risk_score": 449.2
+    },
+    "techniques": [
+      "T1059.001",
+      "T1070.001",
+      "T1105"
+    ],
+    "alert_count": 2,
+    "summary": "Entity dc01 (host) accumulated a risk score of 449 from 2 alerts spanning 9 minutes, covering 3 ATT&CK techniques (T1059.001, T1070.001, T1105). Highest-severity finding: Security Audit Log Cleared.",
+    "recommended_actions": [
+      "Preserve the host; treat as active intrusion cleanup",
+      "Reconstruct activity from SIEM-forwarded logs prior to the clear",
+      "Identify the account that cleared the log and its logon source"
+    ],
+    "sla_hours": 1,
+    "timeline": [
+      {
+        "time": "2026-09-21T16:27:59.410947",
+        "rule": "Suspicious Process Execution",
+        "severity": "high",
+        "description": "Execution of living-off-the-land binaries with arguments associated with download or encoded execution"
+      },
+      {
+        "time": "2026-09-21T16:36:59.410947",
+        "rule": "Security Audit Log Cleared",
+        "severity": "critical",
+        "description": "The Windows security event log was cleared, a classic anti-forensics action"
+      }
+    ]
+  },
+  {
+    "id": "CASE-20260921-59A5A6",
+    "title": "CRITICAL: ip 203.0.113.45 - SSH Brute Force",
+    "severity": "critical",
+    "opened_at": "2026-09-21T02:14:02",
+    "entity": {
+      "id": "203.0.113.45",
+      "type": "ip",
+      "risk_score": 311.0
+    },
+    "techniques": [
+      "T1110.001"
+    ],
+    "alert_count": 1,
+    "summary": "Entity 203.0.113.45 (ip) accumulated a risk score of 311 from 1 alerts spanning 0 minutes, covering 1 ATT&CK techniques (T1110.001). Highest-severity finding: SSH Brute Force.",
+    "recommended_actions": [
+      "Block source IP at the perimeter firewall",
+      "Verify whether any authentication from this source succeeded",
+      "Enable fail2ban or equivalent rate limiting on the target host"
+    ],
+    "sla_hours": 1,
+    "timeline": [
+      {
+        "time": "2026-09-21T02:14:02",
+        "rule": "SSH Brute Force",
+        "severity": "high",
+        "description": "Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)"
+      }
+    ]
+  },
+  {
+    "id": "CASE-20260921-EE6A1E",
+    "title": "HIGH: user deploy - Authentication at Unusual Hour for User",
+    "severity": "high",
+    "opened_at": "2026-09-21T11:41:56",
+    "entity": {
+      "id": "deploy",
+      "type": "user",
+      "risk_score": 151.2
+    },
+    "techniques": [
+      "T1078"
+    ],
+    "alert_count": 1,
+    "summary": "Entity deploy (user) accumulated a risk score of 151 from 1 alerts spanning 0 minutes, covering 1 ATT&CK techniques (T1078). Highest-severity finding: Authentication at Unusual Hour for User.",
+    "recommended_actions": [],
+    "sla_hours": 4,
+    "timeline": [
+      {
+        "time": "2026-09-21T11:41:56",
+        "rule": "Authentication at Unusual Hour for User",
+        "severity": "medium",
+        "description": "User 'deploy' authenticated at 11:00; baseline activity hours are [7, 8, 9]"
+      }
+    ]
+  },
+  {
+    "id": "CASE-20260921-1897A9",
+    "title": "HIGH: ip 45.33.32.156 - SQL Injection Attempt",
+    "severity": "high",
+    "opened_at": "2026-09-21T14:30:51",
+    "entity": {
+      "id": "45.33.32.156",
+      "type": "ip",
+      "risk_score": 132.0
+    },
+    "techniques": [
+      "T1190",
+      "T1595"
+    ],
+    "alert_count": 3,
+    "summary": "Entity 45.33.32.156 (ip) accumulated a risk score of 132 from 3 alerts spanning 0 minutes, covering 2 ATT&CK techniques (T1190, T1595). Highest-severity finding: SQL Injection Attempt.",
+    "recommended_actions": [
+      "Review response codes for successful injection (200 on injected parameter)",
+      "Check database audit logs for unauthorised queries at matching timestamps",
+      "Deploy a WAF rule for the affected endpoint"
+    ],
+    "sla_hours": 4,
+    "timeline": [
+      {
+        "time": "2026-09-21T14:30:11",
+        "rule": "SQL Injection Attempt",
+        "severity": "high",
+        "description": "SQL syntax in a URL parameter, indicating injection probing against the application"
+      },
+      {
+        "time": "2026-09-21T14:30:11",
+        "rule": "Attack Tool User-Agent",
+        "severity": "low",
+        "description": "Client identifies itself as a known offensive security tool"
+      },
+      {
+        "time": "2026-09-21T14:30:51",
+        "rule": "Network IDS Alert",
+        "severity": "medium",
+        "description": "Suricata signature fired on network traffic"
+      }
+    ]
+  },
+  {
+    "id": "CASE-20260921-808D36",
+    "title": "MEDIUM: user svc_sql - User Added to Privileged Group",
+    "severity": "medium",
+    "opened_at": "2026-09-21T16:24:59.410947",
+    "entity": {
+      "id": "svc_sql",
+      "type": "user",
+      "risk_score": 120.0
+    },
+    "techniques": [
+      "T1078.002",
+      "T1098"
+    ],
+    "alert_count": 1,
+    "summary": "Entity svc_sql (user) accumulated a risk score of 120 from 1 alerts spanning 0 minutes, covering 2 ATT&CK techniques (T1078.002, T1098). Highest-severity finding: User Added to Privileged Group.",
+    "recommended_actions": [
+      "Verify an approved change ticket exists for this membership",
+      "Remove the membership if unapproved and investigate the granting account"
+    ],
+    "sla_hours": 24,
+    "timeline": [
+      {
+        "time": "2026-09-21T16:24:59.410947",
+        "rule": "User Added to Privileged Group",
+        "severity": "high",
+        "description": "An account was added to a privileged group, a common persistence and escalation step"
+      }
+    ]
+  }
+]

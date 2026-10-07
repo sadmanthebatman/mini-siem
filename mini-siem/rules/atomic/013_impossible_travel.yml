@@ -1,0 +1,24 @@
+title: Authentication From New Country
+id: auth_new_country
+status: experimental
+description: Successful authentication from a geography not previously seen for this source, outside business hours
+author: Sadman Sakib Abir
+tags: [attack.t1078, attack.initial_access]
+level: medium
+entity: user.name
+evidence_fields: [user.name, source.ip, source.geo.country_name]
+logsource:
+  category: authentication
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: success
+    source.internal: false
+    source.first_seen: true
+  condition: selection
+falsepositives:
+  - Employee travel or VPN exit node changes
+  - Mobile carrier IP reassignment
+response:
+  - Confirm with the user whether the login was theirs
+  - Compare against travel and VPN records before escalating

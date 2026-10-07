@@ -1,0 +1,42 @@
+{
+  "index_patterns": ["siem-signals*", "siem-events*"],
+  "template": {
+    "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+    "mappings": {
+      "properties": {
+        "@timestamp":  { "type": "date" },
+        "event":       { "properties": {
+          "category": {"type":"keyword"}, "action": {"type":"keyword"},
+          "outcome": {"type":"keyword"}, "provider": {"type":"keyword"},
+          "dataset": {"type":"keyword"}, "code": {"type":"integer"},
+          "severity": {"type":"integer"}, "kind": {"type":"keyword"} } },
+        "source":      { "properties": {
+          "ip": {"type":"ip"}, "port": {"type":"integer"},
+          "internal": {"type":"boolean"},
+          "geo": {"properties": {"country_name":{"type":"keyword"},
+                                 "country_iso_code":{"type":"keyword"}}},
+          "as": {"properties": {"organization":{"properties":{"name":{"type":"keyword"}}}}} } },
+        "destination": { "properties": { "ip": {"type":"ip"}, "port": {"type":"integer"} } },
+        "user":        { "properties": {
+          "name": {"type":"keyword"}, "privileged": {"type":"boolean"},
+          "type": {"type":"keyword"}, "invalid": {"type":"boolean"} } },
+        "host":        { "properties": {
+          "name": {"type":"keyword"}, "criticality": {"type":"keyword"},
+          "role": {"type":"keyword"} } },
+        "rule":        { "properties": { "id": {"type":"keyword"}, "name": {"type":"keyword"} } },
+        "signal":      { "properties": {
+          "severity": {"type":"keyword"}, "risk_score": {"type":"integer"},
+          "fingerprint": {"type":"keyword"}, "count": {"type":"integer"} } },
+        "entity":      { "properties": { "id": {"type":"keyword"}, "type": {"type":"keyword"} } },
+        "threat":      { "properties": {
+          "technique": {"properties": {"id": {"type":"keyword"}}},
+          "indicator": {"properties": {"source":{"type":"keyword"},
+                                       "category":{"type":"keyword"}}} } },
+        "url":         { "properties": { "path": {"type":"wildcard"}, "original": {"type":"wildcard"} } },
+        "http":        { "properties": { "response": {"properties":{"status_code":{"type":"integer"}}} } },
+        "user_agent":  { "properties": { "original": {"type":"text"} } },
+        "message":     { "type": "text" }
+      }
+    }
+  }
+}

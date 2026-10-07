@@ -1,0 +1,51 @@
+{
+  "alerts_total": 28,
+  "true_positives": 28,
+  "false_positives": 0,
+  "false_positive_alerts": [],
+  "behaviours_total": 14,
+  "behaviours_detected": 14,
+  "missed": [],
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "by_scenario": {
+    "S1": {
+      "total": 1,
+      "detected": 1,
+      "recall": 1.0
+    },
+    "S2": {
+      "total": 5,
+      "detected": 5,
+      "recall": 1.0
+    },
+    "S3": {
+      "total": 1,
+      "detected": 1,
+      "recall": 1.0
+    },
+    "S4": {
+      "total": 5,
+      "detected": 5,
+      "recall": 1.0
+    },
+    "S5": {
+      "total": 2,
+      "detected": 2,
+      "recall": 1.0
+    }
+  },
+  "techniques_detected": [
+    "T1059",
+    "T1059.001",
+    "T1070.001",
+    "T1078",
+    "T1098",
+    "T1110.001",
+    "T1110.003",
+    "T1190",
+    "T1548",
+    "T1595.003"
+  ]
+}

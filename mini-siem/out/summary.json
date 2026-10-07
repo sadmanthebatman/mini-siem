@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-10-07T22:52:18",
+  "events_parsed": 1136,
+  "alerts": 28,
+  "alerts_by_severity": {
+    "high": 12,
+    "medium": 5,
+    "low": 5,
+    "critical": 6
+  },
+  "entities_scored": 8,
+  "cases_opened": 8,
+  "techniques_covered": 14,
+  "actions_recorded": 20,
+  "stats": {
+    "parsing": {
+      "sample_logs\\auth.log": {
+        "parsed": 354,
+        "skipped": 0,
+        "source": "auth"
+      },
+      "sample_logs\\access.log": {
+        "parsed": 655,
+        "skipped": 0,
+        "source": "nginx"
+      },
+      "sample_logs\\windows_security.json": {
+        "parsed": 104,
+        "skipped": 0,
+        "source": "winlog"
+      },
+      "sample_logs\\suricata_eve.json": {
+        "parsed": 2,
+        "skipped": 0,
+        "source": "suricata"
+      },
+      "sample_logs\\cowrie.json": {
+        "parsed": 21,
+        "skipped": 0,
+        "source": "cowrie"
+      }
+    },
+    "detections": {
+      "atomic": 90,
+      "stateful": 4,
+      "behavioral": 4,
+      "correlation": 2,
+      "after_dedup": 28
+    },
+    "rules_loaded": {
+      "atomic": 15,
+      "sequence": 3
+    }
+  },
+  "attack_coverage": {
+    "T1059": [
+      "Honeypot Post-Compromise Command Execution"
+    ],
+    "T1059.001": [
+      "Suspicious Process Execution"
+    ],
+    "T1070.001": [
+      "Security Audit Log Cleared"
+    ],
+    "T1078": [
+      "Authentication From New Country"
+    ],
+    "T1078.002": [
+      "User Added to Privileged Group"
+    ],
+    "T1083": [
+      "Sensitive File Probing",
+      "XSS or Path Traversal Attempt"
+    ],
+    "T1098": [
+      "User Added to Privileged Group"
+    ],
+    "T1105": [
+      "Suspicious Process Execution",
+      "Honeypot Post-Compromise Command Execution"
+    ],
+    "T1110": [
+      "Honeypot Interaction"
+    ],
+    "T1110.001": [
+      "SSH Brute Force",
+      "Windows Account Brute Force"
+    ],
+    "T1110.003": [
+      "SSH Password Spray"
+    ],
+    "T1190": [
+      "SQL Injection Attempt",
+      "XSS or Path Traversal Attempt",
+      "Network IDS Alert"
+    ],
+    "T1595": [
+      "Attack Tool User-Agent"
+    ],
+    "T1595.003": [
+      "Web Directory Scanning",
+      "Sensitive File Probing"
+    ]
+  }
+}

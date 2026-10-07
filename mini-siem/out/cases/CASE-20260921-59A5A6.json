@@ -1,0 +1,30 @@
+{
+  "id": "CASE-20260921-59A5A6",
+  "title": "CRITICAL: ip 203.0.113.45 - SSH Brute Force",
+  "severity": "critical",
+  "opened_at": "2026-09-21T02:14:02",
+  "entity": {
+    "id": "203.0.113.45",
+    "type": "ip",
+    "risk_score": 311.0
+  },
+  "techniques": [
+    "T1110.001"
+  ],
+  "alert_count": 1,
+  "summary": "Entity 203.0.113.45 (ip) accumulated a risk score of 311 from 1 alerts spanning 0 minutes, covering 1 ATT&CK techniques (T1110.001). Highest-severity finding: SSH Brute Force.",
+  "recommended_actions": [
+    "Block source IP at the perimeter firewall",
+    "Verify whether any authentication from this source succeeded",
+    "Enable fail2ban or equivalent rate limiting on the target host"
+  ],
+  "sla_hours": 1,
+  "timeline": [
+    {
+      "time": "2026-09-21T02:14:02",
+      "rule": "SSH Brute Force",
+      "severity": "high",
+      "description": "Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)"
+    }
+  ]
+}

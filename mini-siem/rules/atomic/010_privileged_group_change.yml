@@ -1,0 +1,28 @@
+title: User Added to Privileged Group
+id: win_privileged_group_add
+status: stable
+description: An account was added to a privileged group, a common persistence and escalation step
+author: Sadman Sakib Abir
+tags: [attack.t1098, attack.t1078.002, attack.persistence]
+level: high
+entity: user.name
+evidence_fields: [user.name, group.name, host.name]
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    event.code: 4732
+  privileged_groups:
+    group.name|contains:
+      - Administrators
+      - Domain Admins
+      - Enterprise Admins
+      - Schema Admins
+      - Backup Operators
+  condition: selection and privileged_groups
+falsepositives:
+  - Planned administrative onboarding with an approved change ticket
+response:
+  - Verify an approved change request exists for this group membership
+  - If unapproved, remove the membership and investigate the granting account

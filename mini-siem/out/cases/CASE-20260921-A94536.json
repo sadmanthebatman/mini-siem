@@ -1,0 +1,38 @@
+{
+  "id": "CASE-20260921-A94536",
+  "title": "CRITICAL: host dc01 - Security Audit Log Cleared",
+  "severity": "critical",
+  "opened_at": "2026-09-21T16:36:59.410947",
+  "entity": {
+    "id": "dc01",
+    "type": "host",
+    "risk_score": 449.2
+  },
+  "techniques": [
+    "T1059.001",
+    "T1070.001",
+    "T1105"
+  ],
+  "alert_count": 2,
+  "summary": "Entity dc01 (host) accumulated a risk score of 449 from 2 alerts spanning 9 minutes, covering 3 ATT&CK techniques (T1059.001, T1070.001, T1105). Highest-severity finding: Security Audit Log Cleared.",
+  "recommended_actions": [
+    "Preserve the host; treat as active intrusion cleanup",
+    "Reconstruct activity from SIEM-forwarded logs prior to the clear",
+    "Identify the account that cleared the log and its logon source"
+  ],
+  "sla_hours": 1,
+  "timeline": [
+    {
+      "time": "2026-09-21T16:27:59.410947",
+      "rule": "Suspicious Process Execution",
+      "severity": "high",
+      "description": "Execution of living-off-the-land binaries with arguments associated with download or encoded execution"
+    },
+    {
+      "time": "2026-09-21T16:36:59.410947",
+      "rule": "Security Audit Log Cleared",
+      "severity": "critical",
+      "description": "The Windows security event log was cleared, a classic anti-forensics action"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+title: Honeypot Post-Compromise Command Execution
+id: honeypot_command
+status: stable
+description: Attacker executed commands inside the honeypot after a successful fake login, revealing post-exploitation tradecraft
+author: Sadman Sakib Abir
+tags: [attack.t1059, attack.execution, attack.t1105]
+level: critical
+entity: source.ip
+evidence_fields: [process.command_line, source.ip]
+logsource:
+  product: cowrie
+detection:
+  selection:
+    honeypot: true
+    event.action: command_executed
+  condition: selection
+falsepositives:
+  - None
+response:
+  - Extract any downloaded payload hashes for threat intel
+  - Record the command sequence as adversary tradecraft for detection tuning

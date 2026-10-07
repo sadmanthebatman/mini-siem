@@ -1,0 +1,21 @@
+title: Full Intrusion Chain - Recon to Compromise
+id: chain_recon_to_compromise
+description: A single source performed reconnaissance, then credential attacks, then authenticated successfully.
+level: critical
+tags: [attack.t1595, attack.t1110, attack.t1078, attack.initial_access]
+sequence:
+  ordered: true
+  within: 4h
+  group_by: entity
+  stages:
+    - name: reconnaissance
+      rule_id: [web_scanning, web_sensitive_paths, suricata_ids_alert, web_attack_tool_agent]
+    - name: credential_attack
+      rule_id: [ssh_brute_force, ssh_password_spray, win_brute_force]
+    - name: compromise
+      rule_id: [auth_success_after_failures]
+response:
+  - Page the on-call analyst; this is a confirmed intrusion pattern
+  - Isolate the target host and preserve volatile memory before reboot
+  - Rotate every credential the source could have reached
+  - Begin the incident response process and open a formal case

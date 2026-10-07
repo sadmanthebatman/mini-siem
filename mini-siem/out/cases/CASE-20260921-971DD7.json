@@ -1,0 +1,71 @@
+{
+  "id": "CASE-20260921-971DD7",
+  "title": "CRITICAL: ip 80.94.92.60 - Successful Authentication After Repeated Failures",
+  "severity": "critical",
+  "opened_at": "2026-09-21T19:12:17.995601",
+  "entity": {
+    "id": "80.94.92.60",
+    "type": "ip",
+    "risk_score": 1644.9
+  },
+  "techniques": [
+    "T1059",
+    "T1078",
+    "T1105",
+    "T1110",
+    "T1110.001",
+    "T1110.003",
+    "T1595"
+  ],
+  "alert_count": 6,
+  "summary": "Entity 80.94.92.60 (ip) accumulated a risk score of 1645 from 6 alerts spanning 0 minutes, covering 7 ATT&CK techniques (T1059, T1078, T1105, T1110, T1110.001, T1110.003). Highest-severity finding: Successful Authentication After Repeated Failures.",
+  "recommended_actions": [
+    "ISOLATE the target host from the network",
+    "Rotate credentials for the compromised account immediately",
+    "Revoke active sessions and authorised SSH keys",
+    "Capture volatile memory before reboot for forensics",
+    "Hunt for persistence: cron, systemd units, authorized_keys, new accounts",
+    "Block source IP at the perimeter firewall",
+    "Verify whether any authentication from this source succeeded",
+    "Enable fail2ban or equivalent rate limiting on the target host"
+  ],
+  "sla_hours": 1,
+  "timeline": [
+    {
+      "time": "2026-09-21T19:12:00",
+      "rule": "Anomalous Event Volume From Source",
+      "severity": "low",
+      "description": "21 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)"
+    },
+    {
+      "time": "2026-09-21T19:12:01.497661",
+      "rule": "SSH Brute Force",
+      "severity": "high",
+      "description": "Repeated SSH authentication failures from a single source address in a short window (10 events within 1m)"
+    },
+    {
+      "time": "2026-09-21T19:12:01.497661",
+      "rule": "SSH Password Spray",
+      "severity": "high",
+      "description": "One source attempting authentication against many distinct usernames (5 distinct user.name within 10m)"
+    },
+    {
+      "time": "2026-09-21T19:12:01.497661",
+      "rule": "Honeypot Interaction",
+      "severity": "high",
+      "description": "Any interaction with the honeypot sensor, which has no legitimate purpose and therefore no false positives"
+    },
+    {
+      "time": "2026-09-21T19:12:13.830386",
+      "rule": "Successful Authentication After Repeated Failures",
+      "severity": "critical",
+      "description": "Authentication SUCCEEDED as 'root' on honeypot after 12 failures against 6 account(s) in the preceding 10 minutes"
+    },
+    {
+      "time": "2026-09-21T19:12:17.995601",
+      "rule": "Honeypot Post-Compromise Command Execution",
+      "severity": "critical",
+      "description": "Attacker executed commands inside the honeypot after a successful fake login, revealing post-exploitation tradecraft"
+    }
+  ]
+}

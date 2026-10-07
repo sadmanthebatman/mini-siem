@@ -1,0 +1,30 @@
+{
+  "id": "CASE-20260921-554367",
+  "title": "CRITICAL: ip 10.0.0.41 - SSH Brute Force",
+  "severity": "critical",
+  "opened_at": "2026-09-21T06:50:00",
+  "entity": {
+    "id": "10.0.0.41",
+    "type": "ip",
+    "risk_score": 216.0
+  },
+  "techniques": [
+    "T1110.001"
+  ],
+  "alert_count": 1,
+  "summary": "Entity 10.0.0.41 (ip) accumulated a risk score of 216 from 1 alerts spanning 0 minutes, covering 1 ATT&CK techniques (T1110.001). Highest-severity finding: SSH Brute Force.",
+  "recommended_actions": [
+    "Block source IP at the perimeter firewall",
+    "Verify whether any authentication from this source succeeded",
+    "Enable fail2ban or equivalent rate limiting on the target host"
+  ],
+  "sla_hours": 1,
+  "timeline": [
+    {
+      "time": "2026-09-21T06:50:00",
+      "rule": "SSH Brute Force",
+      "severity": "high",
+      "description": "Repeated SSH authentication failures from a single source address in a short window (5 events within 1m)"
+    }
+  ]
+}

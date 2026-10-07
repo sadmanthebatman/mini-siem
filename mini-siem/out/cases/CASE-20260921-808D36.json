@@ -1,0 +1,30 @@
+{
+  "id": "CASE-20260921-808D36",
+  "title": "MEDIUM: user svc_sql - User Added to Privileged Group",
+  "severity": "medium",
+  "opened_at": "2026-09-21T16:24:59.410947",
+  "entity": {
+    "id": "svc_sql",
+    "type": "user",
+    "risk_score": 120.0
+  },
+  "techniques": [
+    "T1078.002",
+    "T1098"
+  ],
+  "alert_count": 1,
+  "summary": "Entity svc_sql (user) accumulated a risk score of 120 from 1 alerts spanning 0 minutes, covering 2 ATT&CK techniques (T1078.002, T1098). Highest-severity finding: User Added to Privileged Group.",
+  "recommended_actions": [
+    "Verify an approved change ticket exists for this membership",
+    "Remove the membership if unapproved and investigate the granting account"
+  ],
+  "sla_hours": 24,
+  "timeline": [
+    {
+      "time": "2026-09-21T16:24:59.410947",
+      "rule": "User Added to Privileged Group",
+      "severity": "high",
+      "description": "An account was added to a privileged group, a common persistence and escalation step"
+    }
+  ]
+}

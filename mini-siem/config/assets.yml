@@ -1,0 +1,32 @@
+# Asset inventory. Criticality drives the risk multiplier: the same attack
+# against a crown jewel scores double what it does against a lab box.
+webserver01:
+  criticality: high
+  role: public_web
+  environment: production
+  owner: platform-team
+dbserver01:
+  criticality: crown_jewel
+  role: database
+  environment: production
+  owner: data-team
+dc01:
+  criticality: crown_jewel
+  role: domain_controller
+  environment: production
+  owner: identity-team
+WIN-FINANCE02:
+  criticality: high
+  role: workstation
+  environment: production
+  owner: finance
+devbox01:
+  criticality: low
+  role: development
+  environment: development
+  owner: engineering
+honeypot:
+  criticality: low
+  role: deception
+  environment: dmz
+  owner: security-team

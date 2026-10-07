@@ -1,0 +1,35 @@
+# Identity context. Privileged accounts raise risk; service accounts have
+# different normal behaviour than humans.
+root:
+  privileged: true
+  type: system
+  enabled: true
+Administrator:
+  privileged: true
+  type: system
+  enabled: true
+alice:
+  privileged: false
+  type: human
+  department: engineering
+  enabled: true
+bob:
+  privileged: false
+  type: human
+  department: finance
+  enabled: true
+deploy:
+  privileged: true
+  type: service
+  department: platform
+  enabled: true
+svc_backup:
+  privileged: true
+  type: service
+  department: infrastructure
+  enabled: true
+jsmith:
+  privileged: false
+  type: human
+  department: finance
+  enabled: true

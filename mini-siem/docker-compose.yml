@@ -1,0 +1,56 @@
+# Optional analytics stack. The SIEM pipeline runs standalone with zero
+# containers; this adds OpenSearch for search and Dashboards for visualisation
+# of the same alerts the CLI already produces.
+#
+#   docker compose up -d
+#   python -m siem.cli analyze --input-dir sample_logs
+#   ./scripts/load_opensearch.sh
+#   open http://localhost:5601
+#
+# Requires ~6GB RAM. Single-node, security disabled: LAB USE ONLY.
+
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.17.1
+    container_name: siem-opensearch
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g"
+      - DISABLE_SECURITY_PLUGIN=true
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+    ulimits:
+      memlock: { soft: -1, hard: -1 }
+      nofile: { soft: 65536, hard: 65536 }
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    ports: ["9200:9200"]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\"'"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  dashboards:
+    image: opensearchproject/opensearch-dashboards:2.17.1
+    container_name: siem-dashboards
+    environment:
+      - 'OPENSEARCH_HOSTS=["http://opensearch:9200"]'
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
+    ports: ["5601:5601"]
+    depends_on:
+      opensearch: { condition: service_healthy }
+
+  # Optional: real attacker telemetry. Exposes SSH on 2222.
+  # Only run this on a host you are willing to have attacked.
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: siem-cowrie
+    profiles: ["honeypot"]
+    ports: ["2222:2222"]
+    volumes:
+      - ./sample_logs/cowrie-live:/cowrie/var/log/cowrie
+    restart: unless-stopped
+
+volumes:
+  opensearch-data:

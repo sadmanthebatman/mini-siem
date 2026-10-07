@@ -1,0 +1,135 @@
+[
+  {
+    "scenario": "S1",
+    "entity": "203.0.113.45",
+    "technique": "T1110.001",
+    "expected_rules": [
+      "ssh_brute_force"
+    ],
+    "description": "60 rapid SSH failures from a threat-intel-flagged address"
+  },
+  {
+    "scenario": "S2",
+    "entity": "198.51.100.77",
+    "technique": "T1595.003",
+    "expected_rules": [
+      "web_scanning",
+      "web_sensitive_paths",
+      "web_attack_tool_agent"
+    ],
+    "description": "Directory enumeration and sensitive-file probing"
+  },
+  {
+    "scenario": "S2",
+    "entity": "198.51.100.77",
+    "technique": "T1110.003",
+    "expected_rules": [
+      "ssh_password_spray",
+      "ssh_brute_force"
+    ],
+    "description": "Password spray across 14 distinct usernames"
+  },
+  {
+    "scenario": "S2",
+    "entity": "198.51.100.77",
+    "technique": "T1078",
+    "expected_rules": [
+      "auth_success_after_failures"
+    ],
+    "description": "Successful login as 'deploy' immediately after the spray"
+  },
+  {
+    "scenario": "S2",
+    "entity": "deploy",
+    "technique": "T1078",
+    "expected_rules": [
+      "behavior_unusual_hour",
+      "behavior_new_host"
+    ],
+    "description": "Compromised 'deploy' account authenticating outside its baseline hours"
+  },
+  {
+    "scenario": "S2",
+    "entity": "198.51.100.77",
+    "technique": "T1548",
+    "expected_rules": [
+      "priv_esc_after_external_login"
+    ],
+    "description": "Privilege escalation minutes after external login"
+  },
+  {
+    "scenario": "S3",
+    "entity": "45.33.32.156",
+    "technique": "T1190",
+    "expected_rules": [
+      "web_sql_injection",
+      "web_xss_traversal",
+      "web_attack_tool_agent"
+    ],
+    "description": "SQLi, XSS and path traversal payloads from sqlmap"
+  },
+  {
+    "scenario": "S4",
+    "entity": "141.98.80.12",
+    "technique": "T1110.001",
+    "expected_rules": [
+      "win_brute_force"
+    ],
+    "description": "40 Windows 4625 failures from one source"
+  },
+  {
+    "scenario": "S4",
+    "entity": "141.98.80.12",
+    "technique": "T1078",
+    "expected_rules": [
+      "auth_success_after_failures"
+    ],
+    "description": "Windows logon success after sustained failures"
+  },
+  {
+    "scenario": "S4",
+    "entity": "svc_sql",
+    "technique": "T1098",
+    "expected_rules": [
+      "win_privileged_group_add"
+    ],
+    "description": "Service account added to Domain Admins"
+  },
+  {
+    "scenario": "S4",
+    "entity": "dc01",
+    "technique": "T1059.001",
+    "expected_rules": [
+      "win_suspicious_process"
+    ],
+    "description": "Encoded PowerShell execution on the domain controller"
+  },
+  {
+    "scenario": "S4",
+    "entity": "dc01",
+    "technique": "T1070.001",
+    "expected_rules": [
+      "win_audit_log_cleared"
+    ],
+    "description": "Security audit log cleared to destroy evidence"
+  },
+  {
+    "scenario": "S5",
+    "entity": "80.94.92.60",
+    "technique": "T1110.001",
+    "expected_rules": [
+      "honeypot_interaction",
+      "ssh_brute_force"
+    ],
+    "description": "Botnet credential stuffing against the honeypot"
+  },
+  {
+    "scenario": "S5",
+    "entity": "80.94.92.60",
+    "technique": "T1059",
+    "expected_rules": [
+      "honeypot_command"
+    ],
+    "description": "Post-compromise malware download and log destruction in the honeypot"
+  }
+]

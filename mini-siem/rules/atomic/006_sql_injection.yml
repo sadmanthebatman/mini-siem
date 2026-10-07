@@ -1,0 +1,29 @@
+title: SQL Injection Attempt
+id: web_sql_injection
+status: stable
+description: SQL syntax in a URL parameter, indicating injection probing against the application
+author: Sadman Sakib Abir
+tags: [attack.t1190, attack.initial_access]
+level: high
+entity: source.ip
+evidence_fields: [url.path, http.response.status_code]
+logsource:
+  category: web
+detection:
+  selection:
+    event.category: web
+    url.path|re:
+      - "union\\s+select"
+      - "'\\s*or\\s*'?1'?\\s*=\\s*'?1"
+      - ";\\s*drop\\s+table"
+      - "sleep\\s*\\(\\s*\\d+\\s*\\)"
+      - "benchmark\\s*\\("
+      - "information_schema"
+      - "waitfor\\s+delay"
+  condition: selection
+falsepositives:
+  - Application pages that legitimately accept SQL keywords in search text
+response:
+  - Check the response codes; a 200 on an injected parameter suggests success
+  - Review application logs for database errors at the same timestamps
+  - Confirm parameterised queries are in use on the affected endpoint

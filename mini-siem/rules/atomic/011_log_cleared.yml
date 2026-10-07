@@ -1,0 +1,22 @@
+title: Security Audit Log Cleared
+id: win_audit_log_cleared
+status: stable
+description: The Windows security event log was cleared, a classic anti-forensics action
+author: Sadman Sakib Abir
+tags: [attack.t1070.001, attack.defense_evasion]
+level: critical
+entity: host.name
+evidence_fields: [host.name, user.name]
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    event.code: 1102
+  condition: selection
+falsepositives:
+  - Deliberate log rotation during system maintenance (should be rare and documented)
+response:
+  - Treat as likely intrusion cleanup; preserve the host for forensics
+  - Pull logs forwarded to the SIEM before the clear to reconstruct activity
+  - Identify the account that performed the clear and when it logged on

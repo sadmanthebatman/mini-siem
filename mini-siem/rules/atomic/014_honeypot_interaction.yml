@@ -1,0 +1,21 @@
+title: Honeypot Interaction
+id: honeypot_interaction
+status: stable
+description: Any interaction with the honeypot sensor, which has no legitimate purpose and therefore no false positives
+author: Sadman Sakib Abir
+tags: [attack.t1110, attack.reconnaissance]
+level: high
+entity: source.ip
+evidence_fields: [user.name, user.password_attempted, source.ip]
+logsource:
+  product: cowrie
+detection:
+  selection:
+    honeypot: true
+    event.category: authentication
+  condition: selection
+falsepositives:
+  - None. Nothing should ever talk to a honeypot.
+response:
+  - Add the source to the blocklist; interaction is definitionally hostile
+  - Harvest the attempted credentials to check against real account passwords

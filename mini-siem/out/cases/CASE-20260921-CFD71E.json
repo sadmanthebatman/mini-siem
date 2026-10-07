@@ -1,0 +1,47 @@
+{
+  "id": "CASE-20260921-CFD71E",
+  "title": "CRITICAL: ip 141.98.80.12 - Successful Authentication After Repeated Failures",
+  "severity": "critical",
+  "opened_at": "2026-09-21T16:20:59.410947",
+  "entity": {
+    "id": "141.98.80.12",
+    "type": "ip",
+    "risk_score": 806.3
+  },
+  "techniques": [
+    "T1078",
+    "T1110",
+    "T1110.001",
+    "T1595"
+  ],
+  "alert_count": 3,
+  "summary": "Entity 141.98.80.12 (ip) accumulated a risk score of 806 from 3 alerts spanning 0 minutes, covering 4 ATT&CK techniques (T1078, T1110, T1110.001, T1595). Highest-severity finding: Successful Authentication After Repeated Failures.",
+  "recommended_actions": [
+    "ISOLATE the target host from the network",
+    "Rotate credentials for the compromised account immediately",
+    "Revoke active sessions and authorised SSH keys",
+    "Capture volatile memory before reboot for forensics",
+    "Hunt for persistence: cron, systemd units, authorized_keys, new accounts"
+  ],
+  "sla_hours": 1,
+  "timeline": [
+    {
+      "time": "2026-09-21T16:20:01.634849",
+      "rule": "Windows Account Brute Force",
+      "severity": "high",
+      "description": "Repeated Windows logon failures (4625) from one source address (10 events within 1m)"
+    },
+    {
+      "time": "2026-09-21T16:20:01.634849",
+      "rule": "Anomalous Event Volume From Source",
+      "severity": "low",
+      "description": "41 events from this source versus a baseline mean of 4.0 (threshold 20.8 at 3.0 sigma)"
+    },
+    {
+      "time": "2026-09-21T16:20:59.410947",
+      "rule": "Successful Authentication After Repeated Failures",
+      "severity": "critical",
+      "description": "Authentication SUCCEEDED as 'Administrator' on dc01 after 40 failures against 3 account(s) in the preceding 10 minutes"
+    }
+  ]
+}

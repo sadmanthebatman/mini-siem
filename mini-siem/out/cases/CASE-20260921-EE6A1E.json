@@ -1,0 +1,26 @@
+{
+  "id": "CASE-20260921-EE6A1E",
+  "title": "HIGH: user deploy - Authentication at Unusual Hour for User",
+  "severity": "high",
+  "opened_at": "2026-09-21T11:41:56",
+  "entity": {
+    "id": "deploy",
+    "type": "user",
+    "risk_score": 151.2
+  },
+  "techniques": [
+    "T1078"
+  ],
+  "alert_count": 1,
+  "summary": "Entity deploy (user) accumulated a risk score of 151 from 1 alerts spanning 0 minutes, covering 1 ATT&CK techniques (T1078). Highest-severity finding: Authentication at Unusual Hour for User.",
+  "recommended_actions": [],
+  "sla_hours": 4,
+  "timeline": [
+    {
+      "time": "2026-09-21T11:41:56",
+      "rule": "Authentication at Unusual Hour for User",
+      "severity": "medium",
+      "description": "User 'deploy' authenticated at 11:00; baseline activity hours are [7, 8, 9]"
+    }
+  ]
+}

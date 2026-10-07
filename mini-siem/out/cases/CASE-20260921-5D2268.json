@@ -1,0 +1,44 @@
+{
+  "id": "CASE-20260921-5D2268",
+  "title": "HIGH: ip 198.51.100.77 - Network IDS Alert",
+  "severity": "high",
+  "opened_at": "2026-09-21T11:05:00",
+  "entity": {
+    "id": "198.51.100.77",
+    "type": "ip",
+    "risk_score": 163.1
+  },
+  "techniques": [
+    "T1083",
+    "T1190",
+    "T1595",
+    "T1595.003"
+  ],
+  "alert_count": 3,
+  "summary": "Entity 198.51.100.77 (ip) accumulated a risk score of 163 from 3 alerts spanning 3 minutes, covering 4 ATT&CK techniques (T1083, T1190, T1595, T1595.003). Highest-severity finding: Network IDS Alert.",
+  "recommended_actions": [
+    "Confirm the probed files are not actually served",
+    "Rotate any secret that was exposed via a 200 response"
+  ],
+  "sla_hours": 4,
+  "timeline": [
+    {
+      "time": "2026-09-21T11:02:00",
+      "rule": "Network IDS Alert",
+      "severity": "medium",
+      "description": "Suricata signature fired on network traffic"
+    },
+    {
+      "time": "2026-09-21T11:05:00",
+      "rule": "Sensitive File Probing",
+      "severity": "medium",
+      "description": "Requests for configuration, credential or backup files that no legitimate user browses to"
+    },
+    {
+      "time": "2026-09-21T11:05:00",
+      "rule": "Attack Tool User-Agent",
+      "severity": "low",
+      "description": "Client identifies itself as a known offensive security tool"
+    }
+  ]
+}

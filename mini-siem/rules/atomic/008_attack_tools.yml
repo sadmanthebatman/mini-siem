@@ -1,0 +1,31 @@
+title: Attack Tool User-Agent
+id: web_attack_tool_agent
+status: stable
+description: Client identifies itself as a known offensive security tool
+author: Sadman Sakib Abir
+tags: [attack.t1595, attack.reconnaissance]
+level: low
+entity: source.ip
+evidence_fields: [user_agent.original, url.path]
+logsource:
+  category: web
+detection:
+  selection:
+    user_agent.original|contains:
+      - sqlmap
+      - nikto
+      - nmap
+      - masscan
+      - zgrab
+      - gobuster
+      - dirbuster
+      - wpscan
+      - hydra
+      - metasploit
+  condition: selection
+falsepositives:
+  - Authorised penetration testing
+  - Internal vulnerability management scans
+response:
+  - Confirm whether an authorised assessment is scheduled
+  - Low severity alone, but a strong corroborating signal when correlated

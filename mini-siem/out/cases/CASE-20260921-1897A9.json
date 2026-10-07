@@ -1,0 +1,43 @@
+{
+  "id": "CASE-20260921-1897A9",
+  "title": "HIGH: ip 45.33.32.156 - SQL Injection Attempt",
+  "severity": "high",
+  "opened_at": "2026-09-21T14:30:51",
+  "entity": {
+    "id": "45.33.32.156",
+    "type": "ip",
+    "risk_score": 132.0
+  },
+  "techniques": [
+    "T1190",
+    "T1595"
+  ],
+  "alert_count": 3,
+  "summary": "Entity 45.33.32.156 (ip) accumulated a risk score of 132 from 3 alerts spanning 0 minutes, covering 2 ATT&CK techniques (T1190, T1595). Highest-severity finding: SQL Injection Attempt.",
+  "recommended_actions": [
+    "Review response codes for successful injection (200 on injected parameter)",
+    "Check database audit logs for unauthorised queries at matching timestamps",
+    "Deploy a WAF rule for the affected endpoint"
+  ],
+  "sla_hours": 4,
+  "timeline": [
+    {
+      "time": "2026-09-21T14:30:11",
+      "rule": "SQL Injection Attempt",
+      "severity": "high",
+      "description": "SQL syntax in a URL parameter, indicating injection probing against the application"
+    },
+    {
+      "time": "2026-09-21T14:30:11",
+      "rule": "Attack Tool User-Agent",
+      "severity": "low",
+      "description": "Client identifies itself as a known offensive security tool"
+    },
+    {
+      "time": "2026-09-21T14:30:51",
+      "rule": "Network IDS Alert",
+      "severity": "medium",
+      "description": "Suricata signature fired on network traffic"
+    }
+  ]
+}

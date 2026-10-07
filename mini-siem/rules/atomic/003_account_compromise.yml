@@ -1,0 +1,38 @@
+title: Successful Authentication After Repeated Failures
+id: auth_success_after_failures
+status: stable
+description: Authentication succeeded from a source that had just failed many times, indicating a guessed or sprayed credential
+author: Sadman Sakib Abir
+tags: [attack.t1078, attack.t1110, attack.initial_access]
+level: critical
+entity: source.ip
+
+# IMPORTANT: this rule is intentionally DISABLED as a stateless rule.
+#
+# "Success after failures" cannot be expressed in stateless Sigma: matching
+# event.outcome=success alone fires on every legitimate login in the
+# environment. Leaving it enabled produced 56 critical alerts on a dataset
+# containing 2 real compromises - a 96% false positive rate.
+#
+# The real implementation is stateful and lives in
+# siem/correlation.py::success_after_failures, which tracks prior failures
+# per source within a sliding window before alerting.
+#
+# This file is kept for documentation, ATT&CK mapping and response guidance.
+enabled: false
+
+logsource:
+  category: authentication
+detection:
+  selection:
+    event.category: authentication
+    event.outcome: success
+  condition: selection
+falsepositives:
+  - A legitimate user who eventually recalled the correct password
+  - Stateless evaluation fires on ALL successful logins - see note above
+response:
+  - Treat as confirmed compromise until proven otherwise
+  - Capture the session history for the account on the target host
+  - Rotate the credential and revoke active sessions and keys
+  - Hunt for persistence created after the successful login

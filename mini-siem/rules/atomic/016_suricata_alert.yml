@@ -1,0 +1,21 @@
+title: Network IDS Alert
+id: suricata_ids_alert
+status: stable
+description: Suricata signature fired on network traffic
+author: Sadman Sakib Abir
+tags: [attack.t1190, attack.reconnaissance]
+level: medium
+entity: source.ip
+evidence_fields: [rule.name, destination.port, network.protocol]
+logsource:
+  product: suricata
+detection:
+  selection:
+    event.provider: suricata
+    event.kind: alert
+  condition: selection
+falsepositives:
+  - Noisy signatures such as generic policy violations; tune per-signature
+response:
+  - Review the signature category; policy alerts differ from exploit attempts
+  - Correlate with host logs on the destination to confirm impact
